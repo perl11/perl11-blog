@@ -1,0 +1,15 @@
+title   = "perl11 blog"
+baseURL = "http://perl11.org/blog/"
+theme = "minos"
+copyright = "© 2016 Copyright Reini Urban"
+uglyURLs = true
+languageCode = "en-us"
+categories = [ "cperl", "rperl" ]
+
+[params]
+    author = "perl11"
+    photo = "images/reini.jpg"
+    github = "perl11/cperl"
+    googleAnalytics = "UA-92976825-1"
+    smartToc = true
+
