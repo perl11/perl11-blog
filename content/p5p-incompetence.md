@@ -246,7 +246,7 @@ values.  A function is everywhere a big scalar.
 
 In perl5 there are no unboxed values on the stack, there is not even a stack.
 Not for arguments and return values, not for lexicals and temporaries.
-the normal design problem in a computer language how to find "upvalues",
+The normal design problem in a computer language how to find "upvalues",
 lexicals which are not temporaries on the stack, but rather are closed over
 on stacks of upper functions. In perl5 this was simplified by using "pad's",
 seperate flat arrays with indices or usable and reachable ranges. This is
@@ -467,7 +467,7 @@ Moose syntax and not the tighter and more natural perl6 syntax.
 # symbols:
 
 I already mentioned the initial naive and slow implemenation as hash
-of stashes (stash = symbol table hash). this also leads to surprising
+of stashes (stash = symbol table hash). This also leads to surprising
 language inconsistencies which initially was considered a language
 quirks, which would be eventually fixed (and it would be quite trivial
 to fix), but just this year p5p announced suddenly that it will never
@@ -476,14 +476,14 @@ be fixed. it's now part of the language.
 I'm speaking of autovivification, the fact that when you ask if a symbol or
 stash exists, it does not exist, but all intermediate stashes in the
 namespace get magically polluted by that query, and a query to a previously
-not existing stash will now return yes. it's a parser bug with the namespace
-lookup, which will be fixed with cperl and is fixed in perl6. but p5p
-decided that such a bug is now a feature. action at a distance is a language
+not existing stash will now return yes. It's a parser bug with the namespace
+lookup, which will be fixed with cperl and is fixed in perl6. But p5p
+decided that such a bug is now a feature. Action at a distance is a language
 feature, because perl is magic and dynamic.
-in my opinion it's only caused by gross p5p incompetence, not even knowing
-the history of perl5 anymore. this bug was always considered a bug.
+In my opinion it's only caused by gross p5p incompetence, not even knowing
+the history of perl5 anymore. This bug was always considered a bug.
 
-see also unicode security below.
+See also unicode security below.
 
 # binary symbols and names:
 
@@ -564,11 +564,12 @@ and eventually put the stack onto the CPU stack.
 Note that p5p argues the opposite way. They want to add even more
 run-time branches to the ops, without any justification.
 
-perl5 has no proper stack. their stack is on the heap. which is 50x
-slower to access and needs manual destruction. destruction on the
-stack is free. the stack is also not refcounted.
+perl5 has no proper stack. Their stack is on the heap. which is 50x
+slower to access and needs manual destruction. Destruction on the
+stack is free. The stack is also not refcounted. *(Thanksfully, but
+they want to dstroy even that nowadays.)*
 
-perl needs to optimize special arithmetic op sequences to use unboxed
+Perl needs to optimize special arithmetic op sequences to use unboxed
 integers and strings on the stack. There's a reason why in normal
 languages short lived variables are kept on the stack and not on the
 heap. Why values can easily be updated.  cperl does experiment in
