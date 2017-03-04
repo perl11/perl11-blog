@@ -198,7 +198,10 @@ Reported at 5.12, patched for suse 5.14, still ignored with 5.24.
 
 ## Warn on metasploit CVE-2015-1592
 
-Detection of the destructive attack against Movable-Type, the third
+There are known and exploitable attack vectors published for years,
+and there's no effort to even detect or warn about it.
+
+cperl detects of the destructive attack against Movable-Type, the third
 vector only, which tries to delete `mt-config.cgi` was added to was
 added to cperl `Storable` 3.01c.
 
@@ -207,7 +210,7 @@ but does not protect against it.
 
 ## Warn on metasploit reverse shells
 
-Detect the metasploit payload unix/reverse_perl and some existing
+cperl detects the metasploit payload unix/reverse_perl and some existing
 variants.  This is just a dumb match at startup against existing
 exploits in the wild, but not future variants.  Warns with
 "SECURITY: metasploit reverse/bind shell payload", but do not
@@ -234,9 +237,10 @@ keys.
 
 ## -Dfortify_inc
 
-Was in the very first cperl release 5.22.1. With full toolchain
-support, in all modules. perl5 caught up 2 years later, 5.26.
-But of course they changed the established name to their own
+A security problem.  Was in the very first cperl release 5.22.1,
+because we detected it and developed the fixes. With full toolchain
+support, in all modules. perl5 caught up 2 years later, 5.26.  But of
+course they changed the established name to their own
 `-Ddefault_inc_excludes_dot`
 
 ## perl4 ' package seperator
@@ -291,13 +295,13 @@ cperl allows `for qw(...)` and supporting it is trivial.
 ## .pmc loading and reflection
 
 perl5 removed timestamp checks for pugs with 5.8, a module doesn't
-know if it's loaded from a .pmc, and force loading a .pm is not
+know if it's loaded from a `.pmc`, and force loading a `.pm` is not
 possible.
 
 cperl fixed that for the upcoming JitCache support, which adds
-expensively optimized subs for a package to a .pmc. But only some, not
-all subs.  So a .pmc can never replace a full .pm. So reflection and
-loading .pm needs to be enabled.
+expensively optimized subs for a package to a `.pmc`. But only some, not
+all subs.  So a `.pmc` can never replace a full `.pm`. So reflection and
+loading `.pm` needs to be enabled.
 
 # Core modules
 
@@ -318,12 +322,12 @@ There are also more stack-overflow attacks fixed in my CPAN version.
 YAML is slow, incompatible with itself and insecure by default.
 
 e.g. Parse-CPAN-Meta security: cperl is 10x faster, can read its own files
-and sets $YAML::XS::DisableCode, $YAML::XS::DisableBlessed while
-parsing META.yml or CPAN .yml files.
+and sets `$YAML::XS::DisableCode`, `$YAML::XS::DisableBlessed` while
+parsing `META.yml` or CPAN `.yml` files.
 
 Very similar to Storable. At least with YAML the upstream maintainer is listening,
 but he needs >1 year to merge my fixes, which is not acceptable. Nothing published 
-yet upstream. Needs to be forked to Cpanel::YAML::XS eventually.
+yet upstream. Needs to be [forked](https://github.com/perl11/cperl/issues/198) eventually.
 
 ## JSON::XS
 
