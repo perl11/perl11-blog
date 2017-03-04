@@ -107,4 +107,13 @@ to access the private fields also.
 cperl fields are encapsulated, but the trait syntax is different to perl6.
 The Moose syntax even more.
 
-...
+# Anon classes
+
+Intermediate classes create via role mixins (the `does` keyword) are
+stored in the class slot of every object and refer to stashes.
+But when you mix types or multiple classes combined via `and` or
+`or` you cannot use a stash, you'd need a list of stashes.
+perl6 solved this problem by switching from stashes to objects.
+perl5 solved this via creating temp. anon classes to hold mixins, and
+mro/@ISA to support multiple inheritance.
+
