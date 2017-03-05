@@ -181,4 +181,4 @@ in one of its testcases for parse without headers that the ordering of
 keys is stable when the size did not change. The fix is in my
 [distroprefs](https://github.com/rurban/distroprefs/blob/master/sources/authors/id/R/RU/RURBAN/patches/Text-CSV_XS-cperl.patch).
 
-Comments on [/r/cperl](http://perl11.org/blog/cperl-hash-tables.html)
+# Comments on [/r/cperl](https://www.reddit.com/r/cperl/comments/5xofay/cperl_hash_tables/)

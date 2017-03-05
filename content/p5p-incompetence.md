@@ -764,7 +764,7 @@ and management.
 In cperl and perl6 we use public trackers and irc, no mailing-list.
 Features and bugfixes are developed by proper process.
 
-Comments on [/r/cperl](http://perl11.org/blog/p5p-incompetence.html)
+# Comments on [/r/cperl](https://www.reddit.com/r/cperl/comments/5xof5n/p5p_incompetence/)
 
 --
 Reini Urban
