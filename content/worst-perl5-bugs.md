@@ -339,3 +339,5 @@ For the security bugs see on cperl:
 
     grep -A20 '=head1 Security' pod/perl*cdelta.pod
 
+Comments on [/r/cperl](http://perl11.org/blog/worst-perl5-bugs.html)
+

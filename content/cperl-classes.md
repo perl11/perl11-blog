@@ -90,7 +90,7 @@ The old perl5 design for this was:
 With the old pre-5.10 pseudo-hashes the field names `upper`, `lower`
 as hash keys where compile-time optimized to linear-time array access
 to the magic `@Rectangle::FIELDS` array.  The hash was made restricted,
-ensuring typos in the field names would lead to compile-time errors,
+ensuring typos in the field names would lead to compile-time errors
 when those keys did not exist.
 
 # Encapsulated fields
@@ -107,6 +107,8 @@ to access the private fields also.
 cperl fields are encapsulated, but the trait syntax is different to perl6.
 The Moose syntax even more.
 
+...
+
 # Anon classes
 
 Intermediate classes create via role mixins (the `does` keyword) are
@@ -117,3 +119,4 @@ perl6 solved this problem by switching from stashes to objects.
 perl5 solved this via creating temp. anon classes to hold mixins, and
 mro/@ISA to support multiple inheritance.
 
+...
