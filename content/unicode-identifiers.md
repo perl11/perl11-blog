@@ -258,3 +258,5 @@ single-, mixed and whole-script confusables, and warnings on certain
 incompatible mixed-script pairs such as **Greek + Cyrillic**.
 
 All utf8 encoded names are checked for wellformed-ness.
+
+# [Comments at /r/cperl/](https://www.reddit.com/r/cperl/comments/5y063u/unicode_identifiers/)
