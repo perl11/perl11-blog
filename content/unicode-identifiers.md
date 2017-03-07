@@ -28,6 +28,8 @@ Well, with unicode this would not have been a big problem, as our used
 encoding UTF-8 does not support \0. It's also illegal.
 Only with cperl-5.26 we finally got back safe names, \0 is illegal again.
 
+# Unicode Security
+
 But here we want to talk about the unicode problems when a language
 decides to embrace unicode names. perl5 prides itself by being one of
 the scripting languages with the best unicode support.  Well, the
@@ -64,7 +66,7 @@ Go read it.
  developers, and users should take into account, and provides specific
  recommendations to reduce the risk of problems."*
 
-The most improtant documents are
+The most important documents are
 
 * [TR31 Candidate Characters for Exclusion from Identifiers](http://www.unicode.org/reports/tr31/#Table_Candidate_Characters_for_Exclusion_from_Identifiers).
 * [TR36 Unicode Security Considerations](http://www.unicode.org/reports/tr36/).
