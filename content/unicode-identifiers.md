@@ -77,13 +77,15 @@ In short, those problems need to be fixed:
 # Mixed scripts
 
 A written language is defined by its scripts (i.e. "alphabets"). Some
-languages allow multiple scripts, such as Japanese using characters
-from Chinese (Kanji/Han), Katagana (modern japanase) and Hiregana
-(the old middle-age script used by women).  So if you want to support
-japanese you need allow all these three scripts to be used in a program,
-without any declaration. Similar for Korean, which sometimes also use some old
+languages allow multiple scripts, such as modern Japanese uses both
+logographic (kanji, originated from Chinese hanzi[^1]) and syllabic
+(kana) characters simultaneously, with two distinct types of kana
+(hiragana and katakana).  So if you want to support japanese you need
+allow all these three scripts to be used in a program, without any
+declaration. Similar for Korean, which sometimes also use some old
 Han/Chinese characters, and Chinese which uses the biggest set of
-characters Han, plus one additional educational script, called Bopomofo.
+characters Han, plus one additional educational script, called
+Bopomofo.
 
 The problem is very apparent with Cyrillic and Greek. Both are
 different languages, but use almost the same characters, which are not
@@ -260,5 +262,7 @@ single-, mixed and whole-script confusables, and warnings on certain
 incompatible mixed-script pairs such as **Greek + Cyrillic**.
 
 All utf8 encoded names are checked for wellformed-ness.
+
+[^1]: In Unicode, they're generally unified into a single set, via a process called "Han unification". So, unlike Greek "Α" vs Cyrillic "А", the "same" character that may even look slightly differently in Chinese vs Japanese (e.g. "海"), would have a single codepoint in Unicode.
 
 # [Comments at /r/cperl/](https://www.reddit.com/r/cperl/comments/5y063u/unicode_identifiers/)
