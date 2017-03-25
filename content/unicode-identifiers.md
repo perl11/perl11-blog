@@ -111,7 +111,7 @@ Only with a restricted identifier profile you will see the problem.
 
 cperl does this:
 
-    $ cperl5.26.0d-nt -e'use utf8;my $Γ = 1;if ($Г) { warn }'
+    $ cperl5.26.0 -e'use utf8;my $Γ = 1;if ($Г) { warn }'
     Invalid script Cyrillic in identifier Г) { warn }
     for U+0413. Have Greek at -e line 1.
 
@@ -150,11 +150,11 @@ support.
 I know only of one bug in these tables, the U+3164 HANGUL FILLER is
 wrongly specified as ID_Cont. Thus in perl5 this is valid:
 
-    perl -e'use utf8; $aㅤb == 2;'
+    $ perl -e'use utf8; $aㅤb == 2;'
 
 but cperl detects the problem:
 
-    cperl -e'use utf8; $aㅤb == 2;'
+    $ cperl -e'use utf8; $aㅤb == 2;'
     Unrecognized character \x{3164}; marked by <-- HERE after e utf8; $a<-- HERE
     near column 13 at -e line 1.
 
