@@ -129,9 +129,11 @@ aware of the mixed scripts.
     my $Γ = 1;
     if ($Г) { warn }'
     
-is now the valid variant. But note that mixing Cyrillic and Greek is
-still frowned upon, and needs to be warned, even when being declared
-as such.
+is now a somewhat valid variant. But note that mixing Cyrillic and
+Greek is still frowned upon, and needs to be warned, even when being
+declared as such.
+
+    => Invalid script Cyrillic, cannot be mixed with Greek
 
 Similarily, some scripts can be used undeclared, and some need to be
 declared.  These recommendations are all specified in the TR39
