@@ -198,4 +198,4 @@ ensure no illegal name will get created.
 
 And it clashes with a reserved VMS hint. Means on VMS strict names will be a no-op.
 
-# Comments on [/r/cperl](https://www.reddit.com/r/cperl/comments/5xofay/strict_hashpairs/)
+# Comments on [/r/cperl](https://www.reddit.com/r/cperl/comments/6bgya8/strict_hashpairs/)
