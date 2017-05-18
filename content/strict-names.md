@@ -109,4 +109,4 @@ run-time security attacks.
     
 cperl caught the wrong leading `$` here.
 
-# Comments on [/r/cperl](https://www.reddit.com/r/cperl/comments/6bgya8/strict_names/)
+# Comments on [/r/cperl](https://www.reddit.com/r/cperl/comments/6bvokz/strict_names/)
