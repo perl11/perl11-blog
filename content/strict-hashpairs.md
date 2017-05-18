@@ -123,7 +123,17 @@ in DBI. Here you also see the manual prevention of the problem described
 below, protecting the iteration key from the global iterator in nested
 map loops.
 
-These cases just deserve a `no strict "hashpairs"`.
+These cases just deserve a `no strict "hashpairs"` or fix it.
+
+The typical hackish workaround for such cases is constructing a
+temp. @array from the map and then assign the hash from this array.
+
+    my %p = map { %{$_} } @_;
+
+    =>
+
+    my @p = map { %{$_} } @_;
+    my %p = @p;
 
 # Sideeffects and wrong order of evaluation in map
 
