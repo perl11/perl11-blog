@@ -21,7 +21,7 @@ the parser.
 Since cperl 5.27.1 dynamically created names are treated the same way
 as when they are parsed. Which means illegal utf8 names are
 rejected, unicode names are now normalized at run-time in the rv2sv
-OP, via `${"string"}`.
+OP, via `${"string"}` and mixed unicode scripts are also checked.
 
 # strict names
 
@@ -33,8 +33,8 @@ same rules as when they would have been created at compile-time by the
 parser. Which helps
 in [fighting invalid identifiers](unicode-identifiers.html), which
 cannot be handled by the rest of perl.
-But there was still room left to create invalid and
-potentially harmful utf8 names at run-time via `no strict 'refs'`.
+There was still room left to create invalid and
+potentially harmful utf8 or binary names at run-time via `no strict 'refs'`.
 strict names ensures no illegal name will get created.
 
 Note that p5p insists that illegal identifiers are still legal to
@@ -106,7 +106,19 @@ run-time security attacks.
 
     `my $version = do { no strict 'refs'; ${ '$' . $class . '::VERSION' } };`
     => Invalid identifier "$Pod::Perldoc::VERSION" while "strict names" in use
-    
+
 cperl caught the wrong leading `$` here.
+
+* Scalar-List-Utils: tests for binary names without `no strict`.
+
+* PathTools: File::Spec::Unix
+
+```
+    my $taint = do { no strict; ${"\cTAINT"} };
+```
+
+The default package `%main::` is not detected yet with
+`valid_ident()`, so this fails under strict names, but would pass with
+`${"::\cTAINT"}`.
 
 # Comments on [/r/cperl](https://www.reddit.com/r/cperl/comments/6bvokz/strict_names/)
