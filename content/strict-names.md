@@ -121,4 +121,16 @@ The default package `%main::` is not detected yet with
 `valid_ident()`, so this fails under strict names, but would pass with
 `${"::\cTAINT"}`.
 
+* EUMM: ExtUtils::MakeMaker::Locale
+
+```
+Encode::Alias::define_alias(sub {
+    no strict; # no strict names: "-" is an invalid IDCont
+    no warnings 'once';
+    return ${"ENCODING_" . uc(shift)};
+}, "locale");
+```
+
+`$ENCODING_UTF-8` is an invalid identifier. So don't use strict names.
+
 # Comments on [/r/cperl](https://www.reddit.com/r/cperl/comments/6bvokz/strict_names/)
