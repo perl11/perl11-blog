@@ -1,6 +1,6 @@
 +++
 date = "2017-05-27"
-title = "Attributes arguments"
+title = "Attribute arguments"
 tags = [ "cperl", "attributes" ]
 +++
 
@@ -231,4 +231,4 @@ attribute syntax for perl6 `traits`.
 * [Resolve core attribute arguments, runtime setters, safely #291](https://github.com/perl11/cperl/issues/291)
 * [feature/gh22-ffi branch](https://github.com/perl11/cperl/commits/feature/gh22-ffi)
 
-# Comments on [/r/cperl](https://www.reddit.com/r/cperl/comments/6bvokz/attributes-args/)
+# Comments on [/r/cperl](https://www.reddit.com/r/cperl/comments/6dmzkg/attribute_arguments/)
