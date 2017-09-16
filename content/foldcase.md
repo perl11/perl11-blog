@@ -91,8 +91,8 @@ https://www.w3.org/International/wiki/Case_folding
 As you might have understood from now, the foldcase API needs to add a
 normalization step to the case-folding step.
 
-Otherwise you will not find `"Café"` in `"Cafè"`, the first using the
-decomposed `"e\x301"`, the second using the composed `"\e8"` for the
+Otherwise you will not find `"Café"` in `"Café"`, the first using the
+decomposed `"e\x301"`, the second using the composed `"\e9"` for the
 last small e with grave. cperl and python3 do this for
 all [identifiers](unicode-identifiers.html).
 
