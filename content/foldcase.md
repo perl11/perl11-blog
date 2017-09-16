@@ -256,11 +256,15 @@ searching should be in the libc, and properly solved. And only this,
 not much else. Other unicode properties can be another optional shared
 library.
   
-That's why I added those functions to my [safeclib](https://github.com/rurban/safeclib/commits/wcsnorm), which was written
-2008 by Cisco under the MIT license to add the missing secure C11
-Annex K functions with the `_s` suffix. After about 10 years of C11
-still [almost nobody implements full C11](https://rurban.github.io/safeclib/doc/safec-3.0/d1/dae/md_doc_libc-overview.html). You need to use Windows,
-Android or Embarcadero on embedded systems, or you need to add safeclib.
+That's why I added those functions to
+my [safeclib](https://github.com/rurban/safeclib/commits/wcsnorm),
+which was written 2008 by Cisco under the MIT license to add the
+missing secure C11 Annex K functions with the `_s` suffix. Cisco
+stopped at about 60 functions and I recently all the other missing C11
+functions, now at 134.  After about 10 years of C11 still
+[almost nobody implements full C11](https://rurban.github.io/safeclib/doc/safec-3.0/d1/dae/md_doc_libc-overview.html). You
+need to use Windows, Android or Embarcadero on embedded systems, or
+you need to add safeclib.
 
 [`wcsfc_s()`](https://github.com/rurban/safeclib/blob/wcsnorm/src/extwchar/wcsfc_s.c) does secure foldcasing, i.e. full Unicode case-folding and
 NFD normalization, with the minimal amount of memory used.  It uses my
