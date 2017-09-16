@@ -91,6 +91,11 @@ https://www.w3.org/International/wiki/Case_folding
 As you might have understood from now, the foldcase API needs to add a
 normalization step to the case-folding step.
 
+Otherwise you will not find `"Café"` in `"Cafè"`, the first using the
+decomposed `"e\x301"`, the second using the composed `"\e8"` for the
+last small e with grave. cperl and python3 do this for
+all [identifiers](unicode-identifiers.html).
+
 case-folding expands certain characters to longer strings, NFD
 normalization even more, NFC normalization will contract them at last
 with some additional memory and cpu costs.
