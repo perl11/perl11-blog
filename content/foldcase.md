@@ -1,6 +1,6 @@
 +++
 date = "2017-09-16"
-title = "The sad state case of foldcase and string comparisons"
+title = "The sad state of foldcase and string comparisons"
 tags = [ "cperl", "unicode" ]
 +++
 
