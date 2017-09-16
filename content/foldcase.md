@@ -199,7 +199,7 @@ static large sparse array:
   glibc uses a full unicode array with a bitcompressed scheme of
   the properties.
 
-* 2 or 3-stage tables: that's what perl Unicode::Normalize and
+* **2 or 3-stage tables**: that's what perl `Unicode::Normalize` and
   gnulib/libunistring does and
   [Unicode 5.1 Data Structures for Character Conversion recommends](http://www.unicode.org/versions/Unicode10.0.0/ch05.pdf) recommends.
   Both use 3 nested tables of 256 elements planes. Since the entries
@@ -228,7 +228,7 @@ static large sparse array:
   Note that coreutils will use this eventually, but tried so far over
   10 years already.
 
-* perfect hashes: This is what ICU does. But it's only a simple
+* **perfect hashes**: This is what ICU does. But it's only a simple
   perfect hash.
 
   You could analyze the bit patterns and try to find to fast search
