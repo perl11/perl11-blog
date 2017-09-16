@@ -266,12 +266,16 @@ functions, now at 134.  After about 10 years of C11 still
 need to use Windows, Android or Embarcadero on embedded systems, or
 you need to add safeclib.
 
-[`wcsfc_s()`](https://github.com/rurban/safeclib/blob/wcsnorm/src/extwchar/wcsfc_s.c) does secure foldcasing, i.e. full Unicode case-folding and
-NFD normalization, with the minimal amount of memory used.  It uses my
+[`wcsfc_s()`](https://github.com/rurban/safeclib/blob/wcsnorm/src/extwchar/wcsfc_s.c) does
+secure foldcasing, i.e. full Unicode case-folding and NFD
+normalization, with the minimal amount of memory used.  It uses my
 generated tables for case-folding and canonical decomposition.
-case-folding is the extended version of the musl [`towctrans`](https://github.com/rurban/safeclib/blob/wcsnorm/src/extwchar/towctrans.c), fixed to
-stop searching early, and normalization with the improved version of 
-Unicode::Normalize mkheader with [indirect tables](https://github.com/rurban/safeclib/blob/wcsnorm/src/extwchar/unifcan.h).
+case-folding is the extended version of the musl
+[`towctrans`](https://github.com/rurban/safeclib/blob/wcsnorm/src/extwchar/towctrans.c),
+fixed to stop searching early and updated to latest Unicode, and
+normalization with the improved version of Unicode::Normalize mkheader
+with
+[indirect tables](https://github.com/rurban/safeclib/blob/wcsnorm/src/extwchar/unifcan.h).
 
 [`wcsnorm_s()`](https://github.com/rurban/safeclib/blob/wcsnorm/src/extwchar/wcsnorm_s.c) does normalization to NFC (*soon*), and there exist API's for the
 intermediate steps, decompose, reorder, compose, but not the compat
