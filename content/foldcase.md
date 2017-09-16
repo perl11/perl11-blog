@@ -174,7 +174,7 @@ static large sparse array:
   datatype, which is btw. not shared amongst threads or forks, and
   then searches via slow perl source ops in these ranges. You cannot
   possible think of a slower thing to do. Normally you would prepare
-  such tables as C code and then generate s ahared library for
+  such tables as C code and then generate shared library for
   it. Only the external library Encode does it this way, for its
   encodings transformations.  But still, perl5 has the best unicode
   support of all languages, just also the slowest.
@@ -201,7 +201,7 @@ static large sparse array:
 
 * **2 or 3-stage tables**: that's what perl `Unicode::Normalize` and
   gnulib/libunistring does and
-  [Unicode 5.1 Data Structures for Character Conversion recommends](http://www.unicode.org/versions/Unicode10.0.0/ch05.pdf) recommends.
+  [Unicode 5.1 Data Structures for Character Conversion](http://www.unicode.org/versions/Unicode10.0.0/ch05.pdf) recommends.
   Both use 3 nested tables of 256 elements planes. Since the entries
   are sparse, most elements are NULL, and the final tables holds the
   values.  This saves some space, and search is 3.  However space is
