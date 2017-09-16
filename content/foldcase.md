@@ -231,7 +231,7 @@ static large sparse array:
 * **perfect hashes**: This is what ICU does. But it's only a simple
   perfect hash.
 
-  You could analyze the bit patterns and try to find to fast search
+  You could analyze the bit patterns and try to find a fast search
   algorithm for the numbers. gperf does a little bit of this. This
   could be the perfect algorithm as it would use the least amount of
   memory, and would be still pretty fast. Unfortunately there does not
