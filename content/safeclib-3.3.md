@@ -207,14 +207,15 @@ with `#define strcat_s(dest,dmax,src) _strcat_s_chk(dest,dmax,src,BOS(dest))`
 Very few optimizers will be able to deduce dmax to be a compile-time constant into
 `_strcat_s_chk`, even if we calculate BOS before calling the function and pass it into it.
 
-So **gcc sucks big time when compared to clang**.  Also when we benchmark
-our own [memcpy_s](https://github.com/rurban/safeclib/blob/master/tests/perf_memcpy_s.c)
+So **gcc sucks big time when compared to clang**.  Also when we
+benchmark our own
+[memcpy_s](https://github.com/rurban/safeclib/blob/master/tests/perf_memcpy_s.c)
 implementation against the assembler optimized memcpy from
-libc. clang-5 can now easily vectorize and unrool the memcpy loop, and
+libc. clang-5 can now easily vectorize and unroll the memcpy loop, and
 my own `memcpy_s()` in pure portable C is now as fast as the system
-`memcpy()`, even if my memcpy_s does perform all the necessary
-overflow and vailidity checks. The trick is that most of that checks
-are done at compile-time already. gcc is twice as slow.
+`memcpy()` written in assembler, even if my memcpy_s does perform all
+the necessary overflow and vailidity checks. The trick is that most of
+that checks are done at compile-time already. gcc is twice as slow.
 
 # FreeBSD/glibc hate for the constraint-handler "crap"
 
