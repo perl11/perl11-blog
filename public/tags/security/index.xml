@@ -263,8 +263,8 @@ There&amp;rsquo;s no technical reason not to use it as designed.&lt;/p&gt;
 &lt;p&gt;I&amp;rsquo;ll certainly add lot of BOS checks to cperl also, esp. for XS
 programmers. It was extremely useful when developing apps with
 safeclib, and gcc is side-lined until they can come up with proper
-retpoline names and constant-folding support to catch errors when
-writing code, not in the test-suite or at the customer site.&lt;/p&gt;
+retpoline cmdline options and constant-folding support to catch errors
+when writing code, not in the test-suite or at the customer site.&lt;/p&gt;
 </description>
     </item>
     
