@@ -122,7 +122,7 @@ certain symbol, only its type.
 
 So only some errors can be detected with gcc at compile-time, not all
 run-time checks can be performed at compile-time, and as such the
-run-time has to do it with a ~10% performance degration.
+run-time has to suffer from a ~10% performance degradation.
 
 There's also Intel's MPX **Pointer Bounds Checker** using special
 registers and a hardware hash table for each pointer to hold the size
