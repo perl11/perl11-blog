@@ -214,13 +214,13 @@ implementation against the assembler optimized memcpy from
 libc. clang-5 can now easily vectorize and unroll the memcpy loop, and
 my own `memcpy_s()` in pure portable C is now as fast as the system
 `memcpy()` written in assembler, even if my memcpy_s does perform all
-the necessary overflow and vailidity checks. The trick is that most of
+the necessary overflow and validity checks. The trick is that most of
 that checks are done at compile-time already. gcc is twice as slow.
 
 # FreeBSD/glibc hate for the constraint-handler "crap"
 
 One reason why the secure C11 Annex K API is not yet added to the various
-libc's is not ony because it was written and designed by Microsoft.
+libc's is not only because it was written and designed by Microsoft.
 The public reason given is the mandatory constraint handler, which by
 default does nothing in case of errors. But it can be set to a
 user-defined handler, which logs those errors.
@@ -228,7 +228,7 @@ user-defined handler, which logs those errors.
 With the new configure option `--disable-constraint-handler` you can
 now disable this feature and avoid this "crap". But the performance
 win is not measurable, only the binary size will go down. Because all
-the static error strings will be left out of the `.cstrings` section
+the static error strings will be left out of the `.cstring` section
 in the binary. The performance is unchanged, because the handler is
 only called in case of errors.
 
@@ -242,5 +242,5 @@ There's no technical reason not to use it as designed.
 I'll certainly add lot of BOS checks to cperl also, esp. for XS
 programmers. It was extremely useful when developing apps with
 safeclib, and gcc is side-lined until they can come up with proper
-retpoline names and constant-folding support to catch errors when
-writing code, not in the test-suite or at the customer site.
+retpoline cmdline options and constant-folding support to catch errors
+when writing code, not in the test-suite or at the customer site.
