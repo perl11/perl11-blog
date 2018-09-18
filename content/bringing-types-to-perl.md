@@ -94,7 +94,7 @@ CLOS, ruby include).
 With a MOP you are able to change a classic system to a prototype or mixin
 system, and vice versa.
 
-# the case for perl5
+# The case for perl5
 
 As everybody knows perl5 is famous for destroying object oriented
 programming, and ruby and perl6 are famous for doing too much object
