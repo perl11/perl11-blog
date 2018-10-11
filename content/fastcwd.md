@@ -78,3 +78,5 @@ are returned with a "./" prefix when using fastcwd and not getcwd.
 But there are so many security problems in perl5, that you really should not
 use perl5 in production with public access. Only cperl, which does have those
 kind of bugs fixed. And many more.
+
+# Comments on [/r/cperl](https://www.reddit.com/r/cperl/comments/9n86il/there_be_getcwd_dragons/).

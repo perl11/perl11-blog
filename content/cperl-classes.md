@@ -319,3 +319,5 @@ i.e.
 missed the compile-time error inside the closed-over sub.
 Also all uoob (compile-time out-of-bounds checks) optimizations were missing on those nested fake PADs.
 So I had to add a new pad API `pad_findmy_real` to find the real pad/type of a nested lexical variable.
+
+# Comments on [/r/cperl](https://www.reddit.com/r/cperl/comments/9evcew/cperl_classes/).
