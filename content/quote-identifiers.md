@@ -85,4 +85,4 @@ It is defined in cperl since 5.26c. Affected are only `Sub::Name` and
 `Sub::Util`. `Sub::Name` is broken for a long time and should not be used,
 and `Sub::Util` is distributed in cperl and perl5 core.
 
-# Comments on [/r/cperl](https://www.reddit.com/r/cperl/comments/9n86il/there_be_getcwd_dragons/).
+# Comments on [/r/cperl](https://www.reddit.com/r/cperl/comments/9niw89/removal_of_the_perl4_package_seperator/).
