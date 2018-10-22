@@ -302,5 +302,7 @@ alignment, we cannot control that. It's over the 2% noise rate though.
 https://www.seas.upenn.edu/~cis501/papers/producing-wrong-data.pdf has more
 info about that. It also discusses why sometimes -O2 was faster than -O3.
 
+Liska's "Optimizing large applications" https://arxiv.org/pdf/1403.6997.pdf
+has also a good overview.
 
 # Comments on [/r/cperl](https://www.reddit.com/r/cperl/).
