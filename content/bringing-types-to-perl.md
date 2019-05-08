@@ -201,7 +201,7 @@ The old perl5 design for this was:
     print $r->area(); # OUTPUT: «100» 
 
 With the old pre-5.10 pseudo-hashes the field names `upper`, `lower`
-as hash keys where compile-time optimized to linear-time array access
+as hash keys were compile-time optimized to linear-time array access
 to the magic `@Rectangle::FIELDS` array.  The hash was made restricted,
 ensuring typos in the field names would lead to compile-time errors
 when those keys did not exist.
