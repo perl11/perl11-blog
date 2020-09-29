@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>cperl on perl11 blog</title>
-    <link>http://perl11.org/blog/tags/cperl.html</link>
+    <link>https://perl11.github.io/blog/tags/cperl.html</link>
     <description>Recent content in cperl on perl11 blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2016 Copyright Reini Urban</copyright>
     <lastBuildDate>Mon, 22 Oct 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://perl11.org/blog/tags/cperl/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://perl11.github.io/blog/tags/cperl/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Link-time and post-link optimizations</title>
-      <link>http://perl11.org/blog/bolt.html</link>
+      <link>https://perl11.github.io/blog/bolt.html</link>
       <pubDate>Mon, 22 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://perl11.org/blog/bolt.html</guid>
-      <description>I&#39;ve tried several traditional linker optimizations on cperl recently. The easiest is
+      <guid>https://perl11.github.io/blog/bolt.html</guid>
+      <description>I&amp;rsquo;ve tried several traditional linker optimizations on cperl recently. The easiest is
 LTO or &amp;ldquo;Link Time Optimization&amp;rdquo; via gcc -flto=4 or clang -flto=thin. This requires the gold linker, and enables multi-threaded link-time optimizations.
 For gcc my configure script does
 CC=${CC:-ccache gcc} ./Configure -sder -Dcc=&amp;quot;$CC&amp;quot; \ -Dld=&amp;quot;$CC -fuse-linker-plugin&amp;quot; \ -Accflags=&amp;quot;-flto=4 -fuse-ld=gold -msse4.2 -march=native&amp;quot; ...  and for clang
@@ -27,41 +27,41 @@ CC=${CC:-ccache clang-7} ./Configure -sder -Dcc=&amp;quot;$CC&amp;quot; \ -Dranl
     
     <item>
       <title>Removal of the perl4 &#39; package seperator</title>
-      <link>http://perl11.org/blog/quote-identifiers.html</link>
+      <link>https://perl11.github.io/blog/quote-identifiers.html</link>
       <pubDate>Fri, 12 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://perl11.org/blog/quote-identifiers.html</guid>
-      <description>The removal of the old and deprecated perl4 single quote character &#39; as valid package seperator in cperl went through various steps. It&#39;s also explained in perldata.
+      <guid>https://perl11.github.io/blog/quote-identifiers.html</guid>
+      <description>The removal of the old and deprecated perl4 single quote character &#39; as valid package seperator in cperl went through various steps. It&amp;rsquo;s also explained in perldata.
 There are still two package separators in perl5:
 A double colon (::) and a single quote (&#39;). Normal identifiers can start or end with a double colon, and can contain several parts delimited by double colons. Single quotes within perl5 have similar rules, but with the exception that they are not legal at the end of an identifier: That is, $&#39;foo and $foo&#39;bar are legal, but $foo&#39;bar&#39; is not.</description>
     </item>
     
     <item>
       <title>There be getcwd dragons</title>
-      <link>http://perl11.org/blog/fastcwd.html</link>
+      <link>https://perl11.github.io/blog/fastcwd.html</link>
       <pubDate>Thu, 11 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://perl11.org/blog/fastcwd.html</guid>
+      <guid>https://perl11.github.io/blog/fastcwd.html</guid>
       <description>The Cwd perl5 module contains various functions to return the string of the current working directory. The POSIX API only contains getcwd(), some provide also getwd() - ignored in perl, and the glibc also provides get_current_dir_name() and supports a NULL argument for getcwd(char *buf, size_t size). The Cwd module adds cwd, getcwd, getdcwd for Windows with a drive letter, fastcwd, fastgetcwd.
 symlinks The simplify the explanation of the various variants, which in theory should all return the same string, consider symlinks.</description>
     </item>
     
     <item>
       <title>cperl classes</title>
-      <link>http://perl11.org/blog/cperl-classes.html</link>
+      <link>https://perl11.github.io/blog/cperl-classes.html</link>
       <pubDate>Tue, 11 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://perl11.org/blog/cperl-classes.html</guid>
+      <guid>https://perl11.github.io/blog/cperl-classes.html</guid>
       <description>Subtitle: Why a MOP is not always a good idea cperl being a perl11, i.e. 5+6=11, of course means that cperl classes are designed after perl5 and perl6 classes. perl5 does not have a builtin class keyword, but allows to add keywords to be added at runtime. cperl and perl6 of course do have a builtin class keyword.
 The backcompat problem with a new builtin keyword is, that some usages of variables, package or function names will not work anymore, because the new keyword stepped over it.</description>
     </item>
     
     <item>
       <title>The sad state of foldcase and string comparisons</title>
-      <link>http://perl11.org/blog/foldcase.html</link>
+      <link>https://perl11.github.io/blog/foldcase.html</link>
       <pubDate>Sat, 16 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://perl11.org/blog/foldcase.html</guid>
+      <guid>https://perl11.github.io/blog/foldcase.html</guid>
       <description>You probably heard about case-folding or foldcase before. Unicode defines CaseFolding mappings for some upper-case characters, which in full casefolding mode will expand some exotic characters to larger sequences. In simple mode it will do 1:1 tolower() mappings.
  The perl documentation has this to say:
 fc Returns the casefolded version of EXPR. This is the internal function implementing the &amp;ldquo;\F&amp;rdquo; escape in double-quoted strings.
@@ -70,10 +70,10 @@ Casefolding is the process of mapping strings to a form where case differences a
     
     <item>
       <title>Attribute arguments</title>
-      <link>http://perl11.org/blog/attributes-args.html</link>
+      <link>https://perl11.github.io/blog/attributes-args.html</link>
       <pubDate>Sat, 27 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://perl11.org/blog/attributes-args.html</guid>
+      <guid>https://perl11.github.io/blog/attributes-args.html</guid>
       <description>perl5 had broken attribute handling forever perl5 attributes were invented to provide extendable hooks to attach data or run code at any data, and made for nice syntax, almost resembling other languages.
 E.g.
 my $i :Int = 1; sub calc :prototype($$) { shift + shift }  There were a few number of builtin attributes, like :lvalue, :shared, :const, adding a flag to a function or data, and you could add package-specific for compile-time or run-time hooks to process arbitrary custom attributes.</description>
@@ -81,21 +81,21 @@ my $i :Int = 1; sub calc :prototype($$) { shift + shift }  There were a few numb
     
     <item>
       <title>strict names</title>
-      <link>http://perl11.org/blog/strict-names.html</link>
+      <link>https://perl11.github.io/blog/strict-names.html</link>
       <pubDate>Thu, 18 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://perl11.org/blog/strict-names.html</guid>
+      <guid>https://perl11.github.io/blog/strict-names.html</guid>
       <description>Consistent identifier parsing rules perl5 and cperl older than 5.27.0 accepts any string as valid identifier name when being created under no strict &#39;refs&#39; at run-time, even when most such names are illegal, and cannot be handled by most external modules. Even invalid unicode is allowed.
-cperl 5.26 fixed embedded NUL&#39;s and invalid unicode identifiers illegal, and normalizes unicode identifiers in the parser.
+cperl 5.26 fixed embedded NUL&amp;rsquo;s and invalid unicode identifiers illegal, and normalizes unicode identifiers in the parser.
 Since cperl 5.27.1 dynamically created names are treated the same way as when they are parsed.</description>
     </item>
     
     <item>
       <title>strict hashpairs</title>
-      <link>http://perl11.org/blog/strict-hashpairs.html</link>
+      <link>https://perl11.github.io/blog/strict-hashpairs.html</link>
       <pubDate>Tue, 16 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://perl11.org/blog/strict-hashpairs.html</guid>
+      <guid>https://perl11.github.io/blog/strict-hashpairs.html</guid>
       <description>perl5 optionally warns on odd hash elements my %h = (0,1,2);  is legal code in perl5. The second pair is constructed with the undef value. With use warnings &#39;misc&#39; it will warn at least.
 use warnings; my %h = (0,1,2); =&amp;gt; Odd number of elements in hash assignment (WARNING only)  perl6 throws on odd hash elements perl6 is sane and strict by default.
 my %h = (0..2); =&amp;gt; Odd number of elements found where hash initializer expected: Found 3 (implicit) elements: Last element seen: 2 in block &amp;lt;unit&amp;gt; at &amp;lt;unknown file&amp;gt; line 1  cperl 5.</description>
@@ -103,10 +103,10 @@ my %h = (0..2); =&amp;gt; Odd number of elements found where hash initializer ex
     
     <item>
       <title>Automatic cperl deployments</title>
-      <link>http://perl11.org/blog/automatic-deployments.html</link>
+      <link>https://perl11.github.io/blog/automatic-deployments.html</link>
       <pubDate>Thu, 27 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://perl11.org/blog/automatic-deployments.html</guid>
+      <guid>https://perl11.github.io/blog/automatic-deployments.html</guid>
       <description>Binary packages perl5 relies on external packagers to update and maintain packages for various distributions. It only provides source packages as tarballs.
 cperl does a bit better by also providing binary packages for all major platforms. See also Installation at the STATUS page. win32, win64, debian 7 i686, debian 8 amd64, centos 7 x86_64, centos 6 i686+x86_64 and darwin amd64.
 Packaging was done with this do-make-cperl-release script, leading to
@@ -115,20 +115,20 @@ Centos/Fedora/RHEL as el6 or el7 /etc/yum.</description>
     
     <item>
       <title>Unicode Identifiers</title>
-      <link>http://perl11.org/blog/unicode-identifiers.html</link>
+      <link>https://perl11.github.io/blog/unicode-identifiers.html</link>
       <pubDate>Tue, 07 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://perl11.org/blog/unicode-identifiers.html</guid>
+      <guid>https://perl11.github.io/blog/unicode-identifiers.html</guid>
       <description>Binary names with 5.16 With perl 5.16 added support for binary names, announcing it as support for unicode names. Unicode names were already supported since 5.8.4 with a negative length stored in the hash key of the symbol.
 Supporting binary names without any supporting measures opened huge security holes, as names are mapped 1:1 to filenames when searching for a package, and as we know the C API for files or names just ignores a \0, leading to inconsistencies.</description>
     </item>
     
     <item>
       <title>cperl hash tables</title>
-      <link>http://perl11.org/blog/cperl-hash-tables.html</link>
+      <link>https://perl11.github.io/blog/cperl-hash-tables.html</link>
       <pubDate>Sat, 04 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://perl11.org/blog/cperl-hash-tables.html</guid>
+      <guid>https://perl11.github.io/blog/cperl-hash-tables.html</guid>
       <description>The old perl5 hash table uses   linked lists for its collisions, with slow out-of-cache pointer chasing and data overhead.
   unsorted flags at the end, while some flags are needed for compare.
   has questionable security measures to slow down all cases. seed ok, randomize iter maybe, but randomize the collisions and slow hash funcs is stupid. The security should be fixed with proper collision iteration, not by pseudo-security theatre upfront.</description>
@@ -136,21 +136,21 @@ Supporting binary names without any supporting measures opened huge security hol
     
     <item>
       <title>Worst perl5 bugs</title>
-      <link>http://perl11.org/blog/worst-perl5-bugs.html</link>
+      <link>https://perl11.github.io/blog/worst-perl5-bugs.html</link>
       <pubDate>Mon, 30 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://perl11.org/blog/worst-perl5-bugs.html</guid>
-      <description>A small list of the worst perl5 bugs, all fixed in cperl DoS It&#39;s trivial to DoS a perl5 system.
+      <guid>https://perl11.github.io/blog/worst-perl5-bugs.html</guid>
+      <description>A small list of the worst perl5 bugs, all fixed in cperl DoS It&amp;rsquo;s trivial to DoS a perl5 system.
 $a[9223372036854]=0; %a=(0..4294967296);  Examples for a 64bit system, but also trivial on 32bit. It creates a huge array or hash, which runs out of memory in the VMM subsystem which eventually kills the process. cperl dies with &amp;ldquo;Too many elements&amp;rdquo;, here even at compile-time.
 No Hash Security Nothing is done against the root-cause of a hash flood denial of service attack with colliding keys, only some security theatre by using slower hash functions and slower collision resolution KEY_PERTURB_RANDOM.</description>
     </item>
     
     <item>
       <title>cperl is not a religion</title>
-      <link>http://perl11.org/blog/cperl-is-not-a-religion.html</link>
+      <link>https://perl11.github.io/blog/cperl-is-not-a-religion.html</link>
       <pubDate>Tue, 05 Jul 2016 12:35:00 +0200</pubDate>
       
-      <guid>http://perl11.org/blog/cperl-is-not-a-religion.html</guid>
+      <guid>https://perl11.github.io/blog/cperl-is-not-a-religion.html</guid>
       <description>The recent perl5 management problems are disturbing Criticizing the broken perl5 development process, the managers and esp. various technical problems is suddenly explicitly disallowed in the various perl5 forums by citing a new &amp;ldquo;bad faith&amp;rdquo; code of conduct rule. Mentioning incompetence of submitters is considered uncivil, and mentioning the marketing lies of the previous &amp;ldquo;pumpkin&amp;rdquo; (admin) is also considered uncivil. But lying, abusing the powers, and constant usage and even encouragement of foul language is interestingly not considered uncivil.</description>
     </item>
     

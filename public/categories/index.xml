@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on perl11 blog</title>
-    <link>http://perl11.org/blog/categories.html</link>
+    <link>https://perl11.github.io/blog/categories.html</link>
     <description>Recent content in Categories on perl11 blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2016 Copyright Reini Urban</copyright>
     
-	<atom:link href="http://perl11.org/blog/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://perl11.github.io/blog/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

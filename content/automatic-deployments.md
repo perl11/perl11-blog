@@ -11,9 +11,9 @@ various distributions. It only provides source packages as tarballs.
 
 cperl does a bit better by also providing binary packages for all
 major platforms. See also **Installation** at the 
-[STATUS](http://perl11.org/cperl/STATUS.html) page.
-[win32, win64](http://perl11.org/win/), debian 7 i686, debian 8 amd64,
-centos 7 x86\_64, centos 6 i686+x86_64 and [darwin amd64](http://perl11.org/osx/).
+[STATUS](https://perl11.github.io/cperl/STATUS.html) page.
+[win32, win64](https://perl11.github.io/win/), debian 7 i686, debian 8 amd64,
+centos 7 x86\_64, centos 6 i686+x86_64 and [darwin amd64](https://perl11.github.io/osx/).
 
 Packaging was done with this [do-make-cperl-release](https://github.com/perl11/cperl/blob/master/Porting/do-make-cperl-release) script, leading to
 
@@ -21,14 +21,14 @@ Centos/Fedora/RHEL as el6 or el7 `/etc/yum.repos.d/perl11.repo`:
 
     [perl11]
     name=perl11
-    baseurl=http://perl11.org/rpm/el7/$basearch
+    baseurl=https://perl11.github.io/rpm/el7/$basearch
     enabled=1
-    gpgkey=http://perl11.org/rpm/RPM-GPG-KEY-rurban
+    gpgkey=https://perl11.github.io/rpm/RPM-GPG-KEY-rurban
     gpgcheck=1
 
 or for Debian/Ubuntu `/etc/apt/sources.list.d/perl11.list`:
 
-    deb http://perl11.org/deb/ sid main
+    deb https://perl11.github.io/deb/ sid main
 
 So far the packaging was done on private build VM's, and the hosting
 was done on github.  Yes, you can easily host deb and rpm distros for

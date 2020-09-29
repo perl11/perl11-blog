@@ -27,7 +27,7 @@ OP, via `${"string"}` and mixed unicode scripts are also checked.
 
 **strict 'names'** is now implemented, included in the default and
 enabled with cperl 5.27.1. It checks
-for [valid identifiers](http://perl11.org/cperl/perldata.html#Identifier-parsing) being
+for [valid identifiers](https://perl11.github.io/cperl/perldata.html#Identifier-parsing) being
 created from strings under `no strict 'refs'` at run-time to match the
 same rules as when they would have been created at compile-time by the
 parser. Which helps

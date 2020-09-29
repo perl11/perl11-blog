@@ -291,7 +291,7 @@ import methods.
 
 # Limitations
 
-5.28 still has some class [limitations](http://perl11.org/cperl/perlclass.html#LIMITATIONS).
+5.28 still has some class [limitations](https://perl11.github.io/cperl/perlclass.html#LIMITATIONS).
 
 The number of fields is limited, as in C.
 

@@ -2,63 +2,63 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>security on perl11 blog</title>
-    <link>http://perl11.org/blog/tags/security.html</link>
+    <link>https://perl11.github.io/blog/tags/security.html</link>
     <description>Recent content in security on perl11 blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2016 Copyright Reini Urban</copyright>
     <lastBuildDate>Thu, 11 Oct 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://perl11.org/blog/tags/security/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://perl11.github.io/blog/tags/security/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>There be getcwd dragons</title>
-      <link>http://perl11.org/blog/fastcwd.html</link>
+      <link>https://perl11.github.io/blog/fastcwd.html</link>
       <pubDate>Thu, 11 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://perl11.org/blog/fastcwd.html</guid>
+      <guid>https://perl11.github.io/blog/fastcwd.html</guid>
       <description>The Cwd perl5 module contains various functions to return the string of the current working directory. The POSIX API only contains getcwd(), some provide also getwd() - ignored in perl, and the glibc also provides get_current_dir_name() and supports a NULL argument for getcwd(char *buf, size_t size). The Cwd module adds cwd, getcwd, getdcwd for Windows with a drive letter, fastcwd, fastgetcwd.
 symlinks The simplify the explanation of the various variants, which in theory should all return the same string, consider symlinks.</description>
     </item>
     
     <item>
       <title>safeclib-3.3 and its new compile-time checks</title>
-      <link>http://perl11.org/blog/safeclib-3.3.html</link>
+      <link>https://perl11.github.io/blog/safeclib-3.3.html</link>
       <pubDate>Sat, 03 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://perl11.org/blog/safeclib-3.3.html</guid>
+      <guid>https://perl11.github.io/blog/safeclib-3.3.html</guid>
       <description>In the previous &amp;ldquo;The sad state of foldcase and string comparisons&amp;rdquo; article I already mentioned my safeclib library improvements, for the surpringly rather unique ability to search for strings (with Unicode support).
 With the recent safeclib-3.3 release I made the almost same improvements as in cperl: Adding lots of compile-time checks and seperating them out of the run-time. Do less branching at run-time when the compiler can already prove that a certain branch or check was already done at compile-time.</description>
     </item>
     
     <item>
       <title>strict names</title>
-      <link>http://perl11.org/blog/strict-names.html</link>
+      <link>https://perl11.github.io/blog/strict-names.html</link>
       <pubDate>Thu, 18 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://perl11.org/blog/strict-names.html</guid>
+      <guid>https://perl11.github.io/blog/strict-names.html</guid>
       <description>Consistent identifier parsing rules perl5 and cperl older than 5.27.0 accepts any string as valid identifier name when being created under no strict &#39;refs&#39; at run-time, even when most such names are illegal, and cannot be handled by most external modules. Even invalid unicode is allowed.
-cperl 5.26 fixed embedded NUL&#39;s and invalid unicode identifiers illegal, and normalizes unicode identifiers in the parser.
+cperl 5.26 fixed embedded NUL&amp;rsquo;s and invalid unicode identifiers illegal, and normalizes unicode identifiers in the parser.
 Since cperl 5.27.1 dynamically created names are treated the same way as when they are parsed.</description>
     </item>
     
     <item>
       <title>Unicode Identifiers</title>
-      <link>http://perl11.org/blog/unicode-identifiers.html</link>
+      <link>https://perl11.github.io/blog/unicode-identifiers.html</link>
       <pubDate>Tue, 07 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://perl11.org/blog/unicode-identifiers.html</guid>
+      <guid>https://perl11.github.io/blog/unicode-identifiers.html</guid>
       <description>Binary names with 5.16 With perl 5.16 added support for binary names, announcing it as support for unicode names. Unicode names were already supported since 5.8.4 with a negative length stored in the hash key of the symbol.
 Supporting binary names without any supporting measures opened huge security holes, as names are mapped 1:1 to filenames when searching for a package, and as we know the C API for files or names just ignores a \0, leading to inconsistencies.</description>
     </item>
     
     <item>
       <title>The dangerous SipHash myth</title>
-      <link>http://perl11.org/blog/seed.html</link>
+      <link>https://perl11.github.io/blog/seed.html</link>
       <pubDate>Sat, 26 Nov 2016 12:35:00 +0200</pubDate>
       
-      <guid>http://perl11.org/blog/seed.html</guid>
+      <guid>https://perl11.github.io/blog/seed.html</guid>
       <description>SipHash claims that its &amp;ldquo;cryptographically strong pseudo random function&amp;rdquo; properties protects against hash table DoS flood attacks. This is wrong, because for a successful attack against a SipHash hash table with chained linked lists or linear probing it is enough to get the secret random seed, and then brute force create collisions, which is doable in &amp;lt;1s for 16k keys, 2m for 16k keys, and from 32k to 268M keys in 4 minutes.</description>
     </item>
     

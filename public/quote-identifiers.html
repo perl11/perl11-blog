@@ -9,16 +9,16 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="en_US" />
-<meta property="og:url" content="http://perl11.org/blog/quote-identifiers.html" />
+<meta property="og:url" content="https://perl11.github.io/blog/quote-identifiers.html" />
 
 
     <link href="" rel="alternate" type="application/rss+xml" title="perl11 blog" />
     <link rel="shortcut icon" href="/favicon.png">
 
-    <link href="http://perl11.org/blog/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
-    <link href="http://perl11.org/blog/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+    <link href="https://perl11.github.io/blogwebfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+    <link href="https://perl11.github.io/blogwebfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
 
-    <link rel="stylesheet" href="http://perl11.org/blog/css/style.css">
+    <link rel="stylesheet" href="https://perl11.github.io/blogcss/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/tomorrow.min.css" crossorigin="anonymous" />
     <link href="http://gmpg.org/xfn/11" rel="profile">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -30,7 +30,7 @@
     <meta name="keywords" content="">
     <meta name="author" content="">
 
-    <meta name="generator" content="Hugo 0.62.0-DEV" />
+    <meta name="generator" content="Hugo 0.69.0" />
 </head>
 
 
@@ -40,10 +40,10 @@
     <div id="header-outer" class="outer">
         <div id="header-inner" class="inner">
             <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
-            <a id="logo" class="logo-text" href="http://perl11.org/blog/">perl11 blog</a>
+            <a id="logo" class="logo-text" href="https://perl11.github.io/blog">perl11 blog</a>
             <nav id="main-nav">
-                <a class="main-nav-link" href="http://perl11.org/">perl11.org</a>
-                <a class="main-nav-link" href="http://perl11.org/cperl/STATUS.html">cperl</a>
+                <a class="main-nav-link" href="https://perl11.github.io/">perl11.github.io</a>
+                <a class="main-nav-link" href="https://perl11.github.io/cperl/STATUS.html">cperl</a>
                 <a class="main-nav-link" href="https://www.rperl.org/">rperl</a>
                 <a class="main-nav-link" href="https://github.com/perl11/cperl/">cperl@github</a>
                 <a class="main-nav-link" href="https://docs.perl6.org/">perl6 docs</a>
@@ -76,7 +76,7 @@
         <div class="article-entry" itemprop="articleBody">
             <p>The removal of the old and deprecated perl4 single quote character <code>'</code>
 as valid package seperator in cperl went through various steps.
-It's also explained in <a href="http://perl11.org/cperl/perldata.html#Identifier-parsing">perldata</a>.</p>
+It&rsquo;s also explained in <a href="https://perl11.github.io/cperl/perldata.html#Identifier-parsing">perldata</a>.</p>
 <p>There are still two package separators in perl5:</p>
 <p>A <strong>double colon</strong> (<code>::</code>) and a <strong>single quote</strong> (<code>'</code>).  Normal
 identifiers can start or end with a double colon, and can contain
@@ -119,10 +119,10 @@ my @file = &quot;a&quot;, &quot;b&quot;;
 is(&quot;$file's test&quot;, &quot; test&quot;);        # parsed as $file's. &quot; test&quot;
 is(&quot;@file's test&quot;, &quot;@file's test&quot;); # @ is not expanded anymore
 </code></pre>
-<p>There's no plan to follow the perl6 syntax decision to not expand the
+<p>There&rsquo;s no plan to follow the perl6 syntax decision to not expand the
 <code>@</code> sigil in strings anymore. This is a fundamental perl5 feature and
 widely (ab)used for various cases, which cannot be changed. We also
-don't find that breaking change useful.</p>
+don&rsquo;t find that breaking change useful.</p>
 <p>Additionally, if the identifier is preceded by a sigil -
 that is, if the identifier is part of a variable name - it
 may optionally be enclosed in braces.</p>
@@ -134,15 +134,15 @@ need to use <code>&quot;${file}'s&quot;</code>.</p>
 in this particular version.</p>
 <p>There are still some modules on CPAN which rely on the wrong outdated
 perl4 behaviour. Mostly test related modules which insist on using <code>isn't</code>
-as a method name. There's nothing wrong in using <code>isn't</code> as name, just
-beware that it is not expanded to <code>isn::t</code> anymore. I.e. it's in the
+as a method name. There&rsquo;s nothing wrong in using <code>isn't</code> as name, just
+beware that it is not expanded to <code>isn::t</code> anymore. I.e. it&rsquo;s in the
 main module namespace, and not a method called <code>&quot;t&quot;</code> in the <code>&quot;isn&quot;</code> sub
-namespace. It's also illegal with 5.26c and cannot be parsed.</p>
-<p>For XS modules there's the <code>PERL_NO_QUOTE_PKGSEPERATOR</code> definition.
+namespace. It&rsquo;s also illegal with 5.26c and cannot be parsed.</p>
+<p>For XS modules there&rsquo;s the <code>PERL_NO_QUOTE_PKGSEPERATOR</code> definition.
 It is defined in cperl since 5.26c. Affected are only <code>Sub::Name</code> and
 <code>Sub::Util</code>. <code>Sub::Name</code> is broken for a long time and should not be used,
 and <code>Sub::Util</code> is distributed in cperl and perl5 core.</p>
-<h1 id="comments-on-rcperlhttpswwwredditcomrcperlcomments9niw89removal-of-the-perl4-package-seperator">Comments on <a href="https://www.reddit.com/r/cperl/comments/9niw89/removal_of_the_perl4_package_seperator/">/r/cperl</a>.</h1>
+<h1 id="comments-on-rcperlhttpswwwredditcomrcperlcomments9niw89removal_of_the_perl4_package_seperator">Comments on <a href="https://www.reddit.com/r/cperl/comments/9niw89/removal_of_the_perl4_package_seperator/">/r/cperl</a>.</h1>
 
         </div>
 
@@ -201,7 +201,7 @@ and <code>Sub::Util</code> is distributed in cperl and perl5 core.</p>
             <ul class="article-tag-list">
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://perl11.org/blog//tags/cperl">cperl
+                    <a class="article-tag-list-link" href="https://perl11.github.io/blog/tags/cperl">cperl
                     </a>
                 </li>
                 

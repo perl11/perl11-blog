@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>hash on perl11 blog</title>
-    <link>http://perl11.org/blog/tags/hash.html</link>
+    <link>https://perl11.github.io/blog/tags/hash.html</link>
     <description>Recent content in hash on perl11 blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2016 Copyright Reini Urban</copyright>
     <lastBuildDate>Tue, 16 May 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://perl11.org/blog/tags/hash/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://perl11.github.io/blog/tags/hash/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>strict hashpairs</title>
-      <link>http://perl11.org/blog/strict-hashpairs.html</link>
+      <link>https://perl11.github.io/blog/strict-hashpairs.html</link>
       <pubDate>Tue, 16 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://perl11.org/blog/strict-hashpairs.html</guid>
+      <guid>https://perl11.github.io/blog/strict-hashpairs.html</guid>
       <description>perl5 optionally warns on odd hash elements my %h = (0,1,2);  is legal code in perl5. The second pair is constructed with the undef value. With use warnings &#39;misc&#39; it will warn at least.
 use warnings; my %h = (0,1,2); =&amp;gt; Odd number of elements in hash assignment (WARNING only)  perl6 throws on odd hash elements perl6 is sane and strict by default.
 my %h = (0..2); =&amp;gt; Odd number of elements found where hash initializer expected: Found 3 (implicit) elements: Last element seen: 2 in block &amp;lt;unit&amp;gt; at &amp;lt;unknown file&amp;gt; line 1  cperl 5.</description>
@@ -25,10 +25,10 @@ my %h = (0..2); =&amp;gt; Odd number of elements found where hash initializer ex
     
     <item>
       <title>cperl hash tables</title>
-      <link>http://perl11.org/blog/cperl-hash-tables.html</link>
+      <link>https://perl11.github.io/blog/cperl-hash-tables.html</link>
       <pubDate>Sat, 04 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://perl11.org/blog/cperl-hash-tables.html</guid>
+      <guid>https://perl11.github.io/blog/cperl-hash-tables.html</guid>
       <description>The old perl5 hash table uses   linked lists for its collisions, with slow out-of-cache pointer chasing and data overhead.
   unsorted flags at the end, while some flags are needed for compare.
   has questionable security measures to slow down all cases. seed ok, randomize iter maybe, but randomize the collisions and slow hash funcs is stupid. The security should be fixed with proper collision iteration, not by pseudo-security theatre upfront.</description>
@@ -36,10 +36,10 @@ my %h = (0..2); =&amp;gt; Odd number of elements found where hash initializer ex
     
     <item>
       <title>The dangerous SipHash myth</title>
-      <link>http://perl11.org/blog/seed.html</link>
+      <link>https://perl11.github.io/blog/seed.html</link>
       <pubDate>Sat, 26 Nov 2016 12:35:00 +0200</pubDate>
       
-      <guid>http://perl11.org/blog/seed.html</guid>
+      <guid>https://perl11.github.io/blog/seed.html</guid>
       <description>SipHash claims that its &amp;ldquo;cryptographically strong pseudo random function&amp;rdquo; properties protects against hash table DoS flood attacks. This is wrong, because for a successful attack against a SipHash hash table with chained linked lists or linear probing it is enough to get the secret random seed, and then brute force create collisions, which is doable in &amp;lt;1s for 16k keys, 2m for 16k keys, and from 32k to 268M keys in 4 minutes.</description>
     </item>
     

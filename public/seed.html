@@ -9,16 +9,16 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="en_US" />
-<meta property="og:url" content="http://perl11.org/blog/seed.html" />
+<meta property="og:url" content="https://perl11.github.io/blog/seed.html" />
 
 
     <link href="" rel="alternate" type="application/rss+xml" title="perl11 blog" />
     <link rel="shortcut icon" href="/favicon.png">
 
-    <link href="http://perl11.org/blog/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
-    <link href="http://perl11.org/blog/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+    <link href="https://perl11.github.io/blogwebfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+    <link href="https://perl11.github.io/blogwebfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
 
-    <link rel="stylesheet" href="http://perl11.org/blog/css/style.css">
+    <link rel="stylesheet" href="https://perl11.github.io/blogcss/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/tomorrow.min.css" crossorigin="anonymous" />
     <link href="http://gmpg.org/xfn/11" rel="profile">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -30,7 +30,7 @@
     <meta name="keywords" content="">
     <meta name="author" content="">
 
-    <meta name="generator" content="Hugo 0.62.0-DEV" />
+    <meta name="generator" content="Hugo 0.69.0" />
 </head>
 
 
@@ -40,10 +40,10 @@
     <div id="header-outer" class="outer">
         <div id="header-inner" class="inner">
             <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
-            <a id="logo" class="logo-text" href="http://perl11.org/blog/">perl11 blog</a>
+            <a id="logo" class="logo-text" href="https://perl11.github.io/blog">perl11 blog</a>
             <nav id="main-nav">
-                <a class="main-nav-link" href="http://perl11.org/">perl11.org</a>
-                <a class="main-nav-link" href="http://perl11.org/cperl/STATUS.html">cperl</a>
+                <a class="main-nav-link" href="https://perl11.github.io/">perl11.github.io</a>
+                <a class="main-nav-link" href="https://perl11.github.io/cperl/STATUS.html">cperl</a>
                 <a class="main-nav-link" href="https://www.rperl.org/">rperl</a>
                 <a class="main-nav-link" href="https://github.com/perl11/cperl/">cperl@github</a>
                 <a class="main-nav-link" href="https://docs.perl6.org/">perl6 docs</a>
@@ -94,8 +94,8 @@ nothing to do with any properties of SipHash per se. A hash
 function can never protect a hash table from hash flood attacks on
 hash tables with simple lists on collisions. SipHash properties are
 that is not reversible, the seed is mixed in the box and not only
-at the beginning, so it's is hard to get the seed from the hash
-function itself. But there's no need for it, as it is trivial to
+at the beginning, so it&rsquo;s is hard to get the seed from the hash
+function itself. But there&rsquo;s no need for it, as it is trivial to
 get the seed via other means. The collisions are prone to timing
 attacks independent on the hash function, usually the hash
 iterator exposes the inner ordering and in most cases the random
@@ -128,13 +128,13 @@ linux kernel, glibc, cache or DNS servers use better hash table
 collisions schemes than unsafe chaining or linear probing.</p>
 <p>Vulnerable are all implementors of hash tables who believed the false
 claims of the SipHash authors: ruby, python, rust, haskell, OpenBSD
-and some more.  But also others who don't use a proper hash table
-collision resolution scheme or don't protect their seed or easily
+and some more.  But also others who don&rsquo;t use a proper hash table
+collision resolution scheme or don&rsquo;t protect their seed or easily
 expose the seed, such as perl5 and many more.  rust currently
 e.g. believes that SipHash makes it secure even if a trivial attack
 was just found against it, and changing the seed at table resize will
 help. It only helps a bit.  The seed is still exposable.  With an
-amplification factor of 200 with a table size large enough there's
+amplification factor of 200 with a table size large enough there&rsquo;s
 enough attack surface to render a service useless.
 Reseeding on resize will lead to an amplification factor of 6.</p>
 <p>Links:</p>
@@ -201,12 +201,12 @@ Reseeding on resize will lead to an amplification factor of 6.</p>
             <ul class="article-tag-list">
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://perl11.org/blog//tags/hash">hash
+                    <a class="article-tag-list-link" href="https://perl11.github.io/blog/tags/hash">hash
                     </a>
                 </li>
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://perl11.org/blog//tags/security">security
+                    <a class="article-tag-list-link" href="https://perl11.github.io/blog/tags/security">security
                     </a>
                 </li>
                 

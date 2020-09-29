@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>unicode on perl11 blog</title>
-    <link>http://perl11.org/blog/tags/unicode.html</link>
+    <link>https://perl11.github.io/blog/tags/unicode.html</link>
     <description>Recent content in unicode on perl11 blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2016 Copyright Reini Urban</copyright>
     <lastBuildDate>Sat, 16 Sep 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://perl11.org/blog/tags/unicode/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://perl11.github.io/blog/tags/unicode/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>The sad state of foldcase and string comparisons</title>
-      <link>http://perl11.org/blog/foldcase.html</link>
+      <link>https://perl11.github.io/blog/foldcase.html</link>
       <pubDate>Sat, 16 Sep 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://perl11.org/blog/foldcase.html</guid>
+      <guid>https://perl11.github.io/blog/foldcase.html</guid>
       <description>You probably heard about case-folding or foldcase before. Unicode defines CaseFolding mappings for some upper-case characters, which in full casefolding mode will expand some exotic characters to larger sequences. In simple mode it will do 1:1 tolower() mappings.
  The perl documentation has this to say:
 fc Returns the casefolded version of EXPR. This is the internal function implementing the &amp;ldquo;\F&amp;rdquo; escape in double-quoted strings.

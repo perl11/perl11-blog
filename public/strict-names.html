@@ -9,16 +9,16 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="en_US" />
-<meta property="og:url" content="http://perl11.org/blog/strict-names.html" />
+<meta property="og:url" content="https://perl11.github.io/blog/strict-names.html" />
 
 
     <link href="" rel="alternate" type="application/rss+xml" title="perl11 blog" />
     <link rel="shortcut icon" href="/favicon.png">
 
-    <link href="http://perl11.org/blog/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
-    <link href="http://perl11.org/blog/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+    <link href="https://perl11.github.io/blogwebfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+    <link href="https://perl11.github.io/blogwebfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
 
-    <link rel="stylesheet" href="http://perl11.org/blog/css/style.css">
+    <link rel="stylesheet" href="https://perl11.github.io/blogcss/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/tomorrow.min.css" crossorigin="anonymous" />
     <link href="http://gmpg.org/xfn/11" rel="profile">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -30,7 +30,7 @@
     <meta name="keywords" content="">
     <meta name="author" content="">
 
-    <meta name="generator" content="Hugo 0.62.0-DEV" />
+    <meta name="generator" content="Hugo 0.69.0" />
 </head>
 
 
@@ -40,10 +40,10 @@
     <div id="header-outer" class="outer">
         <div id="header-inner" class="inner">
             <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
-            <a id="logo" class="logo-text" href="http://perl11.org/blog/">perl11 blog</a>
+            <a id="logo" class="logo-text" href="https://perl11.github.io/blog">perl11 blog</a>
             <nav id="main-nav">
-                <a class="main-nav-link" href="http://perl11.org/">perl11.org</a>
-                <a class="main-nav-link" href="http://perl11.org/cperl/STATUS.html">cperl</a>
+                <a class="main-nav-link" href="https://perl11.github.io/">perl11.github.io</a>
+                <a class="main-nav-link" href="https://perl11.github.io/cperl/STATUS.html">cperl</a>
                 <a class="main-nav-link" href="https://www.rperl.org/">rperl</a>
                 <a class="main-nav-link" href="https://github.com/perl11/cperl/">cperl@github</a>
                 <a class="main-nav-link" href="https://docs.perl6.org/">perl6 docs</a>
@@ -80,7 +80,7 @@ identifier name when being created under <code>no strict 'refs'</code> at
 run-time, even when most such names are illegal, and cannot be handled
 by most external modules.
 Even invalid unicode is allowed.</p>
-<p>cperl 5.26 fixed embedded NUL's and invalid unicode
+<p>cperl 5.26 fixed embedded NUL&rsquo;s and invalid unicode
 identifiers <a href="https://github.com/perl11/cperl/issues/233">illegal</a>,
 and
 <a href="https://github.com/perl11/cperl/issues/228">normalizes unicode identifiers</a> in
@@ -92,7 +92,7 @@ OP, via <code>${&quot;string&quot;}</code> and mixed unicode scripts are also ch
 <h1 id="strict-names">strict names</h1>
 <p><strong>strict &lsquo;names&rsquo;</strong> is now implemented, included in the default and
 enabled with cperl 5.27.1. It checks
-for <a href="http://perl11.org/cperl/perldata.html#Identifier-parsing">valid identifiers</a> being
+for <a href="https://perl11.github.io/cperl/perldata.html#Identifier-parsing">valid identifiers</a> being
 created from strings under <code>no strict 'refs'</code> at run-time to match the
 same rules as when they would have been created at compile-time by the
 parser. Which helps
@@ -178,8 +178,8 @@ run-time security attacks.</p>
     no warnings 'once';
     return ${&quot;ENCODING_&quot; . uc(shift)};
 }, &quot;locale&quot;);
-</code></pre><p><code>$ENCODING_UTF-8</code> is an invalid identifier. So don't use strict names.</p>
-<h1 id="comments-on-rcperlhttpswwwredditcomrcperlcomments6bvokzstrict-names">Comments on <a href="https://www.reddit.com/r/cperl/comments/6bvokz/strict_names/">/r/cperl</a></h1>
+</code></pre><p><code>$ENCODING_UTF-8</code> is an invalid identifier. So don&rsquo;t use strict names.</p>
+<h1 id="comments-on-rcperlhttpswwwredditcomrcperlcomments6bvokzstrict_names">Comments on <a href="https://www.reddit.com/r/cperl/comments/6bvokz/strict_names/">/r/cperl</a></h1>
 
         </div>
 
@@ -238,12 +238,12 @@ run-time security attacks.</p>
             <ul class="article-tag-list">
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://perl11.org/blog//tags/cperl">cperl
+                    <a class="article-tag-list-link" href="https://perl11.github.io/blog/tags/cperl">cperl
                     </a>
                 </li>
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://perl11.org/blog//tags/security">security
+                    <a class="article-tag-list-link" href="https://perl11.github.io/blog/tags/security">security
                     </a>
                 </li>
                 

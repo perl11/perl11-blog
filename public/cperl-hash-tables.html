@@ -9,16 +9,16 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="en_US" />
-<meta property="og:url" content="http://perl11.org/blog/cperl-hash-tables.html" />
+<meta property="og:url" content="https://perl11.github.io/blog/cperl-hash-tables.html" />
 
 
     <link href="" rel="alternate" type="application/rss+xml" title="perl11 blog" />
     <link rel="shortcut icon" href="/favicon.png">
 
-    <link href="http://perl11.org/blog/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
-    <link href="http://perl11.org/blog/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+    <link href="https://perl11.github.io/blogwebfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+    <link href="https://perl11.github.io/blogwebfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
 
-    <link rel="stylesheet" href="http://perl11.org/blog/css/style.css">
+    <link rel="stylesheet" href="https://perl11.github.io/blogcss/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/tomorrow.min.css" crossorigin="anonymous" />
     <link href="http://gmpg.org/xfn/11" rel="profile">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -30,7 +30,7 @@
     <meta name="keywords" content="">
     <meta name="author" content="">
 
-    <meta name="generator" content="Hugo 0.62.0-DEV" />
+    <meta name="generator" content="Hugo 0.69.0" />
 </head>
 
 
@@ -40,10 +40,10 @@
     <div id="header-outer" class="outer">
         <div id="header-inner" class="inner">
             <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
-            <a id="logo" class="logo-text" href="http://perl11.org/blog/">perl11 blog</a>
+            <a id="logo" class="logo-text" href="https://perl11.github.io/blog">perl11 blog</a>
             <nav id="main-nav">
-                <a class="main-nav-link" href="http://perl11.org/">perl11.org</a>
-                <a class="main-nav-link" href="http://perl11.org/cperl/STATUS.html">cperl</a>
+                <a class="main-nav-link" href="https://perl11.github.io/">perl11.github.io</a>
+                <a class="main-nav-link" href="https://perl11.github.io/cperl/STATUS.html">cperl</a>
                 <a class="main-nav-link" href="https://www.rperl.org/">rperl</a>
                 <a class="main-nav-link" href="https://github.com/perl11/cperl/">cperl@github</a>
                 <a class="main-nav-link" href="https://docs.perl6.org/">perl6 docs</a>
@@ -126,8 +126,8 @@ said made it clear, that they had no idea what they were
 doing. E.g. they made fun of Donald Knuth, and of course of me
 <em>(besides calling me an asshole once again)</em>. Hinting that they
 maybe should consult an independent expert sitting in the same
-office didn't help. Revising their broken implementation of hash
-tables four times so far doesn't improve trust into their abilities.</p>
+office didn&rsquo;t help. Revising their broken implementation of hash
+tables four times so far doesn&rsquo;t improve trust into their abilities.</p>
 </li>
 <li>
 <p>Started implementing perfect hashes, because they were needed to
@@ -142,9 +142,9 @@ theatre and wrong practices in most dynamic languages, but
 interestingly not in the more technical-orientated important public
 services, usually maintained by a single person. Apparently
 community driven development in large teams is the worst,
-contradicting <a href="http://www.catb.org/esr/writings/cathedral-bazaar/">&ldquo;The Cathedral and the Bazaar&rdquo;</a>. I'll have to seperate that into a new blog post. There are
+contradicting <a href="http://www.catb.org/esr/writings/cathedral-bazaar/">&ldquo;The Cathedral and the Bazaar&rdquo;</a>. I&rsquo;ll have to seperate that into a new blog post. There are
 many more tellsigns of community-based development agony.
-Wrote brute-force and solver-based attacks. (<em>No, I'm not gonna publish
+Wrote brute-force and solver-based attacks. (<em>No, I&rsquo;m not gonna publish
 these</em>).  So far I could only convince google to revise their
 documentation.  Added hashflood testcases to cperl to test detecting
 such attacks.</p>
@@ -154,7 +154,7 @@ such attacks.</p>
 <p>✓ a <strong>fast and short hash function</strong> <a href="https://github.com/rurban/smhasher#smhasher">FNV1A</a></p>
 <p>✓ proper DoS and DDoS <strong>security</strong> by detecting attacks, logging and
 mitigating it. Not using the slowest of all usable hash function
-SipHash, as this doesn't really help against attacks.</p>
+SipHash, as this doesn&rsquo;t really help against attacks.</p>
 <p>✓ <code>PERTURB_KEYS_TOP</code> <strong>move-to-front</strong> with a linked list is the only
 sane strategy for simple chained bucket lists with many reads.</p>
 <p>✓ <code>HV_FILL_RATE</code>: try lower fill rates than 100%.
@@ -184,7 +184,7 @@ fix the hash assign operator to that in user-code.</p>
 array. array_he vs ll_he. (linked list, see also the he-array
 branch). array_he (<code>HvARRAY = AHE[]</code>) can contain
 <code>{ hent_he, hent_hash }</code>. This way the hash catches 99% of all comparisons
-already, and we don't have to chase the external hek ptr, when the
+already, and we don&rsquo;t have to chase the external hek ptr, when the
 hash check fails. Every HE entry is then be 2 words (128), instead
 of one word (64), called AHE. The linked list still contains the old
 <code>HE*</code>, with <code>{ hent_next, hent_hek, hent_val }</code>. This is implemented and
@@ -196,15 +196,15 @@ which is the base to most other hash tables below.</p>
 <p>HE_ARRAY: According to
 <a href="http://goanna.cs.rmit.edu.au/~jz/fulltext/spire05.pdf">http://goanna.cs.rmit.edu.au/~jz/fulltext/spire05.pdf</a> the best for
 chained hashing is currently a <strong>cache-friendly array of buckets</strong>,
-instead of a linked list. cache-friendly continuous buffer of HE's
+instead of a linked list. cache-friendly continuous buffer of HE&rsquo;s
 w/ inlined HEK (char_) + SV_ val, but no hash, no next ptr. Also for
-shared he's: PL_strtab.</p>
+shared he&rsquo;s: PL_strtab.</p>
 </li>
 <li>
 <p><a href="https://github.com/perl11/cperl/issues/102">small hash type</a>:
 linear search in embedded array up to 7 keys. ruby, v8 and several
 others measured 3-5 to be a big win, esp. for their object fields,
-but we don't even have that yet. avoid the hash init, calc and search
+but we don&rsquo;t even have that yet. avoid the hash init, calc and search
 overhead, esp. with our overly slow hash tables.</p>
 </li>
 <li>
@@ -231,7 +231,7 @@ eventually use <strong>leapfrog</strong>.</p>
 <li>
 <p><strong>compact ordered hash</strong>. use an array of short indices into a compacted
 array of hash/key/val entries as in PyPy and now python: &ldquo;compact
-ordered dict&rdquo;. This saves a lot of space and only add's one indirect
+ordered dict&rdquo;. This saves a lot of space and only add&rsquo;s one indirect
 lookup into cache-friendly array. See methane/cpython#1
 <a href="https://mail.python.org/pipermail/python-dev/2016-September/146327.html">https://mail.python.org/pipermail/python-dev/2016-September/146327.html</a>
 This also iterates over the hash in insertion order, which
@@ -251,17 +251,17 @@ hash functions truly horrendous.  They say it is needed to abstract
 readonly (i.e. perfect hashes), and maybe tied and restricted
 hashes.</p>
 <p>The cost of this would be another indirection in every hash
-table call, and I don't see any benefit.</p>
-<p>I don't see a cleanup of the monstrous implementation and different
+table call, and I don&rsquo;t see any benefit.</p>
+<p>I don&rsquo;t see a cleanup of the monstrous implementation and different
 types and attempts to actually improve any of the problematic issues.
 As usual with p5p it will make the situation even worse, not better.</p>
 <h1 id="conflicts">Conflicts</h1>
 <p>Having worked with <code>PERTURB_KEYS_TOP</code> move-to-front in cperl for a few
-years now, there's only one broken module Text::CVS_XS, which assumes
+years now, there&rsquo;s only one broken module Text::CVS_XS, which assumes
 in one of its testcases for parse without headers that the ordering of
 keys is stable when the size did not change. The fix is in my
 <a href="https://github.com/rurban/distroprefs/blob/master/sources/authors/id/R/RU/RURBAN/patches/Text-CSV_XS-cperl.patch">distroprefs</a>.</p>
-<h1 id="comments-on-rcperlhttpswwwredditcomrcperlcomments5xofaycperl-hash-tables">Comments on <a href="https://www.reddit.com/r/cperl/comments/5xofay/cperl_hash_tables/">/r/cperl</a></h1>
+<h1 id="comments-on-rcperlhttpswwwredditcomrcperlcomments5xofaycperl_hash_tables">Comments on <a href="https://www.reddit.com/r/cperl/comments/5xofay/cperl_hash_tables/">/r/cperl</a></h1>
 
         </div>
 
@@ -320,12 +320,12 @@ keys is stable when the size did not change. The fix is in my
             <ul class="article-tag-list">
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://perl11.org/blog//tags/cperl">cperl
+                    <a class="article-tag-list-link" href="https://perl11.github.io/blog/tags/cperl">cperl
                     </a>
                 </li>
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://perl11.org/blog//tags/hash">hash
+                    <a class="article-tag-list-link" href="https://perl11.github.io/blog/tags/hash">hash
                     </a>
                 </li>
                 

@@ -27,7 +27,7 @@ using slower hash functions and slower collision resolution
 it is at a fixed known address offset readable via unpack, or exposed
 via the command line, there is no prevention. Only cperl is secure,
 and also much faster.  See e.g. [cperl `t/op/hashflood.t`](https://github.com/perl11/cperl/blob/master/t/op/hashflood.t)
-Or [perl5241cdelta/"Protect and warn on hash flood DoS"](http://perl11.org/cperl/perl5241cdelta.html#Protect-and-warn-on-hash-flood-DoS).
+Or [perl5241cdelta/"Protect and warn on hash flood DoS"](https://perl11.github.io/cperl/perl5241cdelta.html#Protect-and-warn-on-hash-flood-DoS).
 
     PERL_HASH_SEED_DEBUG=1 perl -e1
 
@@ -92,11 +92,11 @@ evading visual inspection of 3rd party code. Bidi spoofs can contain
 right-to-left overwriting L-T-R characters, combining marks, mixed
 scripts (e.g. Cyrillic and Greek), ...
 
-There's a TR39 security guideline for identifiers which [cperl implements](http://perl11.org/cperl/perl5252cdelta.html#Security).
+There's a TR39 security guideline for identifiers which [cperl implements](https://perl11.github.io/cperl/perl5252cdelta.html#Security).
 perl5 has no idea about that and is not willing to fix it, even if perlcc
 prominently warns about that since 5.16.
 
-No [Unicode confusables +UFFA0, +U3164](http://perl11.org/cperl/perl5240cdelta.html#Security). In deviation from Unicode 1.1
+No [Unicode confusables +UFFA0, +U3164](https://perl11.github.io/cperl/perl5240cdelta.html#Security). In deviation from Unicode 1.1
 we treat the two HANGUL FILLER characters +UFFA0 and +U3164 not as
 valid ID\_Start and ID\_Continue characters for perl identifiers.
 
@@ -112,12 +112,12 @@ were added to the parser and compiler to protect from overlong names
 
 ## Insecure taint mode
 
-perl5 has several known taint loopholes, see [perlsec](http://perl11.org/cperl/perlsec.html#Taint-mode). cperl has them all fixed.
+perl5 has several known taint loopholes, see [perlsec](https://perl11.github.io/cperl/perlsec.html#Taint-mode). cperl has them all fixed.
 
 Of course it is much faster to use tainted variables, as you don't have to
 check and sanitize every single variable, only external, tainted ones.
 
-# Minor issues from [perl540cdelta](http://perl11.org/cperl/perl5240cdelta.html#Security)
+# Minor issues from [perl540cdelta](https://perl11.github.io/cperl/perl5240cdelta.html#Security)
 
 ## DynaLoader format string hardening
 
@@ -194,7 +194,7 @@ Handle get magic with globs in the regex compiler.
 Correctly restore context, esp. when loading unicode swashes.
 Reported at 5.12, patched for suse 5.14, still ignored with 5.24.
 
-# Minor issues from [perl541cdelta](http://perl11.org/cperl/perl5241cdelta.html#Security)
+# Minor issues from [perl541cdelta](https://perl11.github.io/cperl/perl5241cdelta.html#Security)
 
 ## Warn on metasploit CVE-2015-1592
 

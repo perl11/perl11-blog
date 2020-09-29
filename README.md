@@ -8,4 +8,4 @@ Publish with
 
     rm -rf public/*
     hugo
-    rsync public/* ../perl11.org/blog/
+    rsync public/* ../perl11.github.io/blog/

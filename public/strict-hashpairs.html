@@ -9,16 +9,16 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="en_US" />
-<meta property="og:url" content="http://perl11.org/blog/strict-hashpairs.html" />
+<meta property="og:url" content="https://perl11.github.io/blog/strict-hashpairs.html" />
 
 
     <link href="" rel="alternate" type="application/rss+xml" title="perl11 blog" />
     <link rel="shortcut icon" href="/favicon.png">
 
-    <link href="http://perl11.org/blog/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
-    <link href="http://perl11.org/blog/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+    <link href="https://perl11.github.io/blogwebfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+    <link href="https://perl11.github.io/blogwebfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
 
-    <link rel="stylesheet" href="http://perl11.org/blog/css/style.css">
+    <link rel="stylesheet" href="https://perl11.github.io/blogcss/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/tomorrow.min.css" crossorigin="anonymous" />
     <link href="http://gmpg.org/xfn/11" rel="profile">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -30,7 +30,7 @@
     <meta name="keywords" content="">
     <meta name="author" content="">
 
-    <meta name="generator" content="Hugo 0.62.0-DEV" />
+    <meta name="generator" content="Hugo 0.69.0" />
 </head>
 
 
@@ -40,10 +40,10 @@
     <div id="header-outer" class="outer">
         <div id="header-inner" class="inner">
             <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
-            <a id="logo" class="logo-text" href="http://perl11.org/blog/">perl11 blog</a>
+            <a id="logo" class="logo-text" href="https://perl11.github.io/blog">perl11 blog</a>
             <nav id="main-nav">
-                <a class="main-nav-link" href="http://perl11.org/">perl11.org</a>
-                <a class="main-nav-link" href="http://perl11.org/cperl/STATUS.html">cperl</a>
+                <a class="main-nav-link" href="https://perl11.github.io/">perl11.github.io</a>
+                <a class="main-nav-link" href="https://perl11.github.io/cperl/STATUS.html">cperl</a>
                 <a class="main-nav-link" href="https://www.rperl.org/">rperl</a>
                 <a class="main-nav-link" href="https://github.com/perl11/cperl/">cperl@github</a>
                 <a class="main-nav-link" href="https://docs.perl6.org/">perl6 docs</a>
@@ -149,7 +149,7 @@ produce multiple pairs per map to a hash.</p>
 <p>Only one module at all used a double pair in a map, Net::DNS. This was easily fixed.
 The other modules use <code>%opts = @_;</code> to assign a hash from the pairwise arguments of a
 subroutine call. Perfectly fine usage.</p>
-<p>It get's crazy with something like</p>
+<p>It get&rsquo;s crazy with something like</p>
 <pre><code>my %p = map { %{$_} } @_;
 </code></pre>
 <p>in <code>Moose/Util/TypeConstraints.pm</code>.</p>
@@ -229,14 +229,14 @@ identifiers being created from strings under no strict &lsquo;refs&rsquo;. Which
 helps in <a href="unicode-identifiers.html">fighting invalid identifiers</a>
 being created, which cannot be handled by the rest of perl, and
 esp. since 5.16 with additional embedded NUL.  cperl 5.26 made
-embedded NUL's and invalid unicode
+embedded NUL&rsquo;s and invalid unicode
 identifiers <a href="https://github.com/perl11/cperl/issues/233">illegal</a>,
 and <a href="https://github.com/perl11/cperl/issues/228">normalizes unicode identifiers</a>. But
-there's still room left to create invalid and potentially harmful
+there&rsquo;s still room left to create invalid and potentially harmful
 unicode names. Some cases are only warned against.  strict names will
 ensure no illegal name will get created.</p>
 <p>And it clashes with a reserved VMS hint. Means on VMS strict names will be a no-op.</p>
-<h1 id="comments-on-rcperlhttpswwwredditcomrcperlcomments6bgya8strict-hashpairs">Comments on <a href="https://www.reddit.com/r/cperl/comments/6bgya8/strict_hashpairs/">/r/cperl</a></h1>
+<h1 id="comments-on-rcperlhttpswwwredditcomrcperlcomments6bgya8strict_hashpairs">Comments on <a href="https://www.reddit.com/r/cperl/comments/6bgya8/strict_hashpairs/">/r/cperl</a></h1>
 
         </div>
 
@@ -295,12 +295,12 @@ ensure no illegal name will get created.</p>
             <ul class="article-tag-list">
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://perl11.org/blog//tags/cperl">cperl
+                    <a class="article-tag-list-link" href="https://perl11.github.io/blog/tags/cperl">cperl
                     </a>
                 </li>
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://perl11.org/blog//tags/hash">hash
+                    <a class="article-tag-list-link" href="https://perl11.github.io/blog/tags/hash">hash
                     </a>
                 </li>
                 

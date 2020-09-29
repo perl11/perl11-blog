@@ -6,7 +6,7 @@ tags = [ "cperl" ]
 
 The removal of the old and deprecated perl4 single quote character `'`
 as valid package seperator in cperl went through various steps.
-It's also explained in [perldata](http://perl11.org/cperl/perldata.html#Identifier-parsing).
+It's also explained in [perldata](https://perl11.github.io/cperl/perldata.html#Identifier-parsing).
 
 There are still two package separators in perl5:
 

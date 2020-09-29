@@ -9,16 +9,16 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="en_US" />
-<meta property="og:url" content="http://perl11.org/blog/unicode-identifiers.html" />
+<meta property="og:url" content="https://perl11.github.io/blog/unicode-identifiers.html" />
 
 
     <link href="" rel="alternate" type="application/rss+xml" title="perl11 blog" />
     <link rel="shortcut icon" href="/favicon.png">
 
-    <link href="http://perl11.org/blog/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
-    <link href="http://perl11.org/blog/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+    <link href="https://perl11.github.io/blogwebfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+    <link href="https://perl11.github.io/blogwebfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
 
-    <link rel="stylesheet" href="http://perl11.org/blog/css/style.css">
+    <link rel="stylesheet" href="https://perl11.github.io/blogcss/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/tomorrow.min.css" crossorigin="anonymous" />
     <link href="http://gmpg.org/xfn/11" rel="profile">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -30,7 +30,7 @@
     <meta name="keywords" content="">
     <meta name="author" content="">
 
-    <meta name="generator" content="Hugo 0.62.0-DEV" />
+    <meta name="generator" content="Hugo 0.69.0" />
 </head>
 
 
@@ -40,10 +40,10 @@
     <div id="header-outer" class="outer">
         <div id="header-inner" class="inner">
             <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
-            <a id="logo" class="logo-text" href="http://perl11.org/blog/">perl11 blog</a>
+            <a id="logo" class="logo-text" href="https://perl11.github.io/blog">perl11 blog</a>
             <nav id="main-nav">
-                <a class="main-nav-link" href="http://perl11.org/">perl11.org</a>
-                <a class="main-nav-link" href="http://perl11.org/cperl/STATUS.html">cperl</a>
+                <a class="main-nav-link" href="https://perl11.github.io/">perl11.github.io</a>
+                <a class="main-nav-link" href="https://perl11.github.io/cperl/STATUS.html">cperl</a>
                 <a class="main-nav-link" href="https://www.rperl.org/">rperl</a>
                 <a class="main-nav-link" href="https://github.com/perl11/cperl/">cperl@github</a>
                 <a class="main-nav-link" href="https://docs.perl6.org/">perl6 docs</a>
@@ -89,10 +89,10 @@ of the problems with binary names support, but many critical modules
 still have no idea, and are still vulnerable. Even the new perl5
 maintainer has no idea as he showed in his YAPC talk about XS
 programming. He happily used the old <code>gv_</code> interfaces not supporting
-\0, and there's no upgrade path in perl5 for old modules to avoid those
+\0, and there&rsquo;s no upgrade path in perl5 for old modules to avoid those
 security holes.</p>
 <p>Well, with unicode this would not have been a big problem, as our used
-encoding UTF-8 does not support \0. It's also illegal.
+encoding UTF-8 does not support \0. It&rsquo;s also illegal.
 Only with cperl-5.26 we finally got back safe names, \0 is illegal again.</p>
 <h1 id="unicode-security">Unicode Security</h1>
 <p>But here we want to talk about the unicode problems when a language
@@ -106,7 +106,7 @@ browsers or DNS servers, and email names. The problem with unicode is,
 that different names are not identifiable as such, and thus you can
 easily fool someone to click on a wrong url. Identifiers need to be
 identifiable and restricted.  perl5 and perl6 pride themselves of
-anything goes, it does not enforce opinions on their users. Well, it's
+anything goes, it does not enforce opinions on their users. Well, it&rsquo;s
 still insecure.</p>
 <p>The simpliest unicode problems are tricks with illegal UTF-8
 encodings.  This is also relevant to strings and therefore mostly
@@ -114,7 +114,7 @@ fixed in perl5 and cperl.</p>
 <p>But there are many more security problems in most programming
 languages with unicode support. Only cperl, python3 and perl6 fixed
 some of them, by doing normalization of its identifiers.
-I didn't see any effort in all the others, besides java.</p>
+I didn&rsquo;t see any effort in all the others, besides java.</p>
 <p>The most basic overview is at <a href="http://websec.github.io/unicode-security-guide/">http://websec.github.io/unicode-security-guide/</a>.
 Go read it.</p>
 <p><em>&ldquo;Because Unicode contains such a large number of characters and
@@ -146,7 +146,7 @@ Bopomofo.</p>
 <p>The problem is very apparent with Cyrillic and Greek. Both are
 different languages, but use almost the same characters, which are not
 identifiable in any font. If the character is a Greek or Cyrillic
-symbol, or if it's one of the mathematical symbols.</p>
+symbol, or if it&rsquo;s one of the mathematical symbols.</p>
 <p>So strict mixed-script profiles for identifiers forbid the default
 usage of Greek and Cyrillic characters in the same program.</p>
 <p>In cperl, which is currently the only unicode safe language, this
@@ -157,7 +157,7 @@ if ($Г) { warn; }
 </code></pre>
 <p><code>use utf8</code> declares that identifiers can be unicode, utf-8 encoded.
 <code>my $Γ = 1</code> sets a scalar lexical variable to 1, with the name <code>Γ</code>.
-What you don't see, only the parser, or if you inspect the program
+What you don&rsquo;t see, only the parser, or if you inspect the program
 binary, e.g. with od, is that the first Γ character is the greek
 gamma, and the second variable uses the cyrillic gamma.
 Only with a restricted identifier profile you will see the problem.</p>
@@ -240,7 +240,7 @@ releases.</p>
 <code>&lt;c, a, f, U+00E9&gt;</code>.
 <code>café́</code>, using two combining marks (<code>&lt;c, a, f, e, U+0301, U+0301&gt;</code>) is currently allowed.</p>
 <h1 id="same-script-confusables">Same Script Confusables</h1>
-<p>There's a whole table of confusables which are still confusable after
+<p>There&rsquo;s a whole table of confusables which are still confusable after
 restricting mixed scripts and after normalization.
 These confusables are typically optionally warned upon.</p>
 <h1 id="moderately-restrictive-level">Moderately Restrictive Level</h1>
@@ -285,12 +285,12 @@ restriction level to <strong>Minimally Restrictive</strong>.</p>
 single-, mixed and whole-script confusables, and warnings on certain
 incompatible mixed-script pairs such as <strong>Greek + Cyrillic</strong>.</p>
 <p>All utf8 encoded names are checked for wellformed-ness.</p>
-<h1 id="comments-at-rcperlhttpswwwredditcomrcperlcomments5y063uunicode-identifiers"><a href="https://www.reddit.com/r/cperl/comments/5y063u/unicode_identifiers/">Comments at /r/cperl/</a></h1>
+<h1 id="comments-at-rcperlhttpswwwredditcomrcperlcomments5y063uunicode_identifiers"><a href="https://www.reddit.com/r/cperl/comments/5y063u/unicode_identifiers/">Comments at /r/cperl/</a></h1>
 <section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p>In Unicode, they're generally unified into a single set, via a process called &ldquo;Han unification&rdquo;. So, unlike Greek &ldquo;Α&rdquo; vs Cyrillic &ldquo;А&rdquo;, the &ldquo;same&rdquo; character that may even look slightly differently in Chinese vs Japanese (e.g. &ldquo;海&rdquo;), would have a single codepoint in Unicode. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>In Unicode, they&rsquo;re generally unified into a single set, via a process called &ldquo;Han unification&rdquo;. So, unlike Greek &ldquo;Α&rdquo; vs Cyrillic &ldquo;А&rdquo;, the &ldquo;same&rdquo; character that may even look slightly differently in Chinese vs Japanese (e.g. &ldquo;海&rdquo;), would have a single codepoint in Unicode. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
@@ -352,12 +352,12 @@ incompatible mixed-script pairs such as <strong>Greek + Cyrillic</strong>.</p>
             <ul class="article-tag-list">
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://perl11.org/blog//tags/cperl">cperl
+                    <a class="article-tag-list-link" href="https://perl11.github.io/blog/tags/cperl">cperl
                     </a>
                 </li>
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://perl11.org/blog//tags/security">security
+                    <a class="article-tag-list-link" href="https://perl11.github.io/blog/tags/security">security
                     </a>
                 </li>
                 

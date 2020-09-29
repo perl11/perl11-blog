@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>attributes on perl11 blog</title>
-    <link>http://perl11.org/blog/tags/attributes.html</link>
+    <link>https://perl11.github.io/blog/tags/attributes.html</link>
     <description>Recent content in attributes on perl11 blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2016 Copyright Reini Urban</copyright>
     <lastBuildDate>Sat, 27 May 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://perl11.org/blog/tags/attributes/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://perl11.github.io/blog/tags/attributes/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Attribute arguments</title>
-      <link>http://perl11.org/blog/attributes-args.html</link>
+      <link>https://perl11.github.io/blog/attributes-args.html</link>
       <pubDate>Sat, 27 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://perl11.org/blog/attributes-args.html</guid>
+      <guid>https://perl11.github.io/blog/attributes-args.html</guid>
       <description>perl5 had broken attribute handling forever perl5 attributes were invented to provide extendable hooks to attach data or run code at any data, and made for nice syntax, almost resembling other languages.
 E.g.
 my $i :Int = 1; sub calc :prototype($$) { shift + shift }  There were a few number of builtin attributes, like :lvalue, :shared, :const, adding a flag to a function or data, and you could add package-specific for compile-time or run-time hooks to process arbitrary custom attributes.</description>

@@ -1,5 +1,5 @@
 title   = "perl11 blog"
-baseURL = "http://perl11.org/blog/"
+baseURL = "https://perl11.github.io/blog"
 theme = "minos"
 copyright = "© 2016 Copyright Reini Urban"
 uglyURLs = true

@@ -82,7 +82,7 @@ driver effort at FreeBSD but you still need to link a
 library for hardware counter support. 
 
 DTrace has now [cpc support](https://www.joyent.com/blog/dtracing-hardware-cache-counters),
-but a **DTrace to gcov** script would be needed, as [DTrace](http://perl11.org/cperl/perldtrace.html)
+but a **DTrace to gcov** script would be needed, as [DTrace](https://perl11.github.io/cperl/perldtrace.html)
 is far better than the linux-only `perf`.
 
 # prelink

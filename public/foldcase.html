@@ -9,16 +9,16 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="en_US" />
-<meta property="og:url" content="http://perl11.org/blog/foldcase.html" />
+<meta property="og:url" content="https://perl11.github.io/blog/foldcase.html" />
 
 
     <link href="" rel="alternate" type="application/rss+xml" title="perl11 blog" />
     <link rel="shortcut icon" href="/favicon.png">
 
-    <link href="http://perl11.org/blog/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
-    <link href="http://perl11.org/blog/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+    <link href="https://perl11.github.io/blogwebfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+    <link href="https://perl11.github.io/blogwebfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
 
-    <link rel="stylesheet" href="http://perl11.org/blog/css/style.css">
+    <link rel="stylesheet" href="https://perl11.github.io/blogcss/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/tomorrow.min.css" crossorigin="anonymous" />
     <link href="http://gmpg.org/xfn/11" rel="profile">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -30,7 +30,7 @@
     <meta name="keywords" content="">
     <meta name="author" content="">
 
-    <meta name="generator" content="Hugo 0.62.0-DEV" />
+    <meta name="generator" content="Hugo 0.69.0" />
 </head>
 
 
@@ -40,10 +40,10 @@
     <div id="header-outer" class="outer">
         <div id="header-inner" class="inner">
             <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
-            <a id="logo" class="logo-text" href="http://perl11.org/blog/">perl11 blog</a>
+            <a id="logo" class="logo-text" href="https://perl11.github.io/blog">perl11 blog</a>
             <nav id="main-nav">
-                <a class="main-nav-link" href="http://perl11.org/">perl11.org</a>
-                <a class="main-nav-link" href="http://perl11.org/cperl/STATUS.html">cperl</a>
+                <a class="main-nav-link" href="https://perl11.github.io/">perl11.github.io</a>
+                <a class="main-nav-link" href="https://perl11.github.io/cperl/STATUS.html">cperl</a>
                 <a class="main-nav-link" href="https://www.rperl.org/">rperl</a>
                 <a class="main-nav-link" href="https://github.com/perl11/cperl/">cperl@github</a>
                 <a class="main-nav-link" href="https://docs.perl6.org/">perl6 docs</a>
@@ -122,7 +122,7 @@ string using this data, and then use a binary comparison.</em></p>
 <hr>
 <p><strong>w3.org</strong> gets closer to the real problem:</p>
 <p><a href="https://www.w3.org/International/wiki/Case_folding">https://www.w3.org/International/wiki/Case_folding</a></p>
-<p><em>One of the most common things that software developers do is &ldquo;normalize&rdquo; text for the purposes of comparison. And one of the most basic ways that developers are taught to normalize text for comparison is to compare it in a &ldquo;case insensitive&rdquo; fashion. In other cases, developers want to compare strings in a case sensitive manner. Unicode defines upper, lower, and title case properties for characters, plus special cases that impact specific language's use of text.</em></p>
+<p><em>One of the most common things that software developers do is &ldquo;normalize&rdquo; text for the purposes of comparison. And one of the most basic ways that developers are taught to normalize text for comparison is to compare it in a &ldquo;case insensitive&rdquo; fashion. In other cases, developers want to compare strings in a case sensitive manner. Unicode defines upper, lower, and title case properties for characters, plus special cases that impact specific language&rsquo;s use of text.</em></p>
 <p><em>Many developers believe that that a case-insensitive comparison is achieved by mapping both strings being compared to either upper- or lowercase and then comparing the resulting bytes. The existence of functions such as &lsquo;strcasecmp&rsquo; in some C libraries, for example, or common examples in programming books reinforces this belief:</em></p>
 <pre><code>if (strcmp(toupper(foo),toupper(bar))==0) { // a typical caseless comparison
 </code></pre>
@@ -150,11 +150,11 @@ NFD. (Same as Apple in its HPFS btw).</p>
 <code>wcsnorm()</code>. You cannot compare multi-byte strings in POSIX, only with
 gnulib or ICU, but they are massively over-architectured, still
 unusable for e.g. coreutils. E.g. grep would really like to find
-strings. Only cperl will do so properly after <a href="https://github.com/perl11/cperl/issues/332">#332</a> has landed (it's
+strings. Only cperl will do so properly after <a href="https://github.com/perl11/cperl/issues/332">#332</a> has landed (it&rsquo;s
 already implemented in safeclib). awk, grep, perl5, perl6, ruby,
 python, go, silversearch, go platinum searcher, rust ripgrep, &hellip; do
-not. They all fail on normalization issues, and with grep you don't
-know if it's multi-byte patched at all.</p>
+not. They all fail on normalization issues, and with grep you don&rsquo;t
+know if it&rsquo;s multi-byte patched at all.</p>
 <p>safeclib is the first library to implement proper foldcasing in
 C. FreeBSD will take it from there.</p>
 <h2 id="details">Details</h2>
@@ -175,7 +175,7 @@ hear about 8x slower basic utilities with utf-8 locales.</p>
 <h2 id="multi-byte-support">Multi-byte support</h2>
 <p>A good overview is this document:
 <a href="http://crashcourse.housegordon.org/coreutils-multibyte-support.html">http://crashcourse.housegordon.org/coreutils-multibyte-support.html</a></p>
-<h2 id="so-whats-the-technical-problem">So what's the technical problem?</h2>
+<h2 id="so-whats-the-technical-problem">So what&rsquo;s the technical problem?</h2>
 <p>Technically you need to search in a range of integers from <code>1</code> to
 <code>0x10fff</code> for case-folding expansions, and then for composed
 characters which need to be decomposed.</p>
@@ -186,11 +186,11 @@ static large sparse array:</p>
 <p><strong>linear search</strong> is done by musl libc in <a href="https://github.com/rurban/musl/commits/master"><code>towctrans.c</code></a>, and musl even does
 not stop searching after it cannot find the integer anymore. It always
 does a full range sweep over all ranges.
-I've fixed that, and musl is now as fast as glibc in case transformations.</p>
+I&rsquo;ve fixed that, and musl is now as fast as glibc in case transformations.</p>
 </li>
 <li>
 <p>perl5 also does linear search, but does it even more stupid than
-musl. It's about 8000x slower than a normal search for unicode
+musl. It&rsquo;s about 8000x slower than a normal search for unicode
 properties as implemented in cperl. cperl needed it faster, because
 cperl supports unicode indentifiers, and such identifiers need to be
 normalized.  perl does not have case-insensitive identifiers, so
@@ -209,12 +209,12 @@ encodings transformations.  But still, perl5 has the best unicode
 support of all languages, just also the slowest.</p>
 </li>
 <li>
-<p><strong>trie search</strong>: There's a nice helper module in perl <code>CharClass::Matcher</code>
+<p><strong>trie search</strong>: There&rsquo;s a nice helper module in perl <code>CharClass::Matcher</code>
 under <code>regen/regcharclass.pl</code> which generates C code for some
-typical unicode properties, as trie. It's not a binary trie, it does
+typical unicode properties, as trie. It&rsquo;s not a binary trie, it does
 not start in the middle of the range, and then recurses into the
 lower or upper halfs of the integers. It only starts at the top, so
-it's basically a longer linear search, using even more memory than
+it&rsquo;s basically a longer linear search, using even more memory than
 a linear search, but it supports utf-8, it even searches in multi-byte
 utf-8, it generates ASCII and EBCDIC, and it will drive into
 recursion overflows when trying to generate more realistic
@@ -223,14 +223,14 @@ tables. Such as the case mapping tables or the normalization tables.</p>
 <li>
 <p><strong>binary search</strong>: You start in the middle and recurse into the lower
 and upper halfs. The problem here is the amount of memory needed to
-store the full range of <code>1..0x10fff</code>. You don't want to do
+store the full range of <code>1..0x10fff</code>. You don&rsquo;t want to do
 that. Only glibc does that. Search is log n, but memory is n.
 You could binary search over some range tables though.</p>
 <p>glibc uses a full unicode array with a bitcompressed scheme of
 the properties.</p>
 </li>
 <li>
-<p><strong>2 or 3-stage tables</strong>: that's what perl <code>Unicode::Normalize</code> and
+<p><strong>2 or 3-stage tables</strong>: that&rsquo;s what perl <code>Unicode::Normalize</code> and
 gnulib/libunistring does and
 <a href="http://www.unicode.org/versions/Unicode10.0.0/ch05.pdf">Unicode 5.1 Data Structures for Character Conversion</a> recommends.
 Both use 3 nested tables of 256 elements planes. Since the entries
@@ -258,7 +258,7 @@ code. safeclib hardcoded those simple rules.</p>
 10 years already.</p>
 </li>
 <li>
-<p><strong>perfect hashes</strong>: This is what ICU does. But it's only a simple
+<p><strong>perfect hashes</strong>: This is what ICU does. But it&rsquo;s only a simple
 perfect hash.</p>
 <p>You could analyze the bit patterns and try to find a fast search
 algorithm for the numbers. gperf does a little bit of this. This
@@ -266,14 +266,14 @@ could be the perfect algorithm as it would use the least amount of
 memory, and would be still pretty fast. Unfortunately there does not
 exist a good perfect hash algorithm for such integer ranges as used
 in the Unicode tables.</p>
-<p>I'll try to come up with something new.  A strict hash table as used
+<p>I&rsquo;ll try to come up with something new.  A strict hash table as used
 in the most popular schemes via one indirection tables would be too
 big, a hybrid approach would be needed to generate logic branches
 with some nested binary search or hash tables, which in the end also
-can have logic to search in the collision list. It doesn't need to
+can have logic to search in the collision list. It doesn&rsquo;t need to
 be perfect perfect, just optimal. The cost function would be easy,
 as branches, search cost, code size and data size would be easy to
-come up with. But it doesn't exist yet. And Unicode changes its
+come up with. But it doesn&rsquo;t exist yet. And Unicode changes its
 tables every year.</p>
 </li>
 </ul>
@@ -283,7 +283,7 @@ and honestly such a basic problem of string comparison and string
 searching should be in the libc, and properly solved. And only this,
 not much else. Other unicode properties can be another optional shared
 library.</p>
-<p>That's why I added those functions to
+<p>That&rsquo;s why I added those functions to
 my <a href="https://github.com/rurban/safeclib/commits/wcsnorm">safeclib</a>,
 which was written 2008 by Cisco under the MIT license to add the
 missing secure C11 Annex K functions with the <code>_s</code> suffix. Cisco
@@ -302,7 +302,7 @@ fixed to stop searching early and updated to latest Unicode, and
 normalization with the improved version of Unicode::Normalize mkheader
 with
 <a href="https://github.com/rurban/safeclib/blob/wcsnorm/src/extwchar/unifcan.h">indirect tables</a>.</p>
-<p><a href="https://github.com/rurban/safeclib/blob/wcsnorm/src/extwchar/wcsnorm_s.c"><code>wcsnorm_s()</code></a> does normalization to NFC (<em>soon</em>), and there exist API's for the
+<p><a href="https://github.com/rurban/safeclib/blob/wcsnorm/src/extwchar/wcsnorm_s.c"><code>wcsnorm_s()</code></a> does normalization to NFC (<em>soon</em>), and there exist API&rsquo;s for the
 intermediate steps, decompose, reorder, compose, but not the compat
 modes as they are too big and should not be used. (only for identifiers
 maybe).</p>
@@ -315,10 +315,10 @@ maybe).</p>
             <h3>Contents</h3>
             <nav id="TableOfContents">
   <ul>
-    <li><a href="#fc">fc</a></li>
+    <li><a href="#fc"><strong>fc</strong></a></li>
     <li><a href="#details">Details</a></li>
     <li><a href="#multi-byte-support">Multi-byte support</a></li>
-    <li><a href="#so-whats-the-technical-problem">So what's the technical problem?</a></li>
+    <li><a href="#so-whats-the-technical-problem">So what&rsquo;s the technical problem?</a></li>
   </ul>
 </nav>
         </div>
@@ -371,12 +371,12 @@ maybe).</p>
             <ul class="article-tag-list">
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://perl11.org/blog//tags/cperl">cperl
+                    <a class="article-tag-list-link" href="https://perl11.github.io/blog/tags/cperl">cperl
                     </a>
                 </li>
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://perl11.org/blog//tags/unicode">unicode
+                    <a class="article-tag-list-link" href="https://perl11.github.io/blog/tags/unicode">unicode
                     </a>
                 </li>
                 

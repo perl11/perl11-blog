@@ -63,9 +63,9 @@ perl6:
 Argument types are mandatory, the default return type is **:void**.
 The signature is compile-time checked as every other function call,
 just better because of the mandatory types. Besides the already
-defined [coretypes](http://perl11.org/cperl/perltypes.html#coretypes),
+defined [coretypes](https://perl11.github.io/cperl/perltypes.html#coretypes),
 there exist
-also [ffi-specific stdint types](http://perl11.org/cperl/lib/ffi.html),
+also [ffi-specific stdint types](https://perl11.github.io/cperl/lib/ffi.html),
 which map naturally to the C types. Same as in Perl6.  As in C
 primitive types are copied, aggregate types called by
 reference/pointer. Technically an IV is passed as-is from the SvIVX to
@@ -78,7 +78,7 @@ Strings can optionally be encoded in the translation to C and
 back via the `:encoded(NAME)` attribute.
 
 The platform and library specific supported libffi calling conventions
-can be specified with the [`:nativeconv(ABI)`](http://perl11.org/cperl/lib/attributes.html#nativeconv-STRING) attribute. This is only
+can be specified with the [`:nativeconv(ABI)`](https://perl11.github.io/cperl/lib/attributes.html#nativeconv-STRING) attribute. This is only
 useful for some platforms, such as 32-bit Intel x86
 with
 [7 different](https://github.com/libffi/libffi/blob/master/src/x86/ffi.c#L227) calling

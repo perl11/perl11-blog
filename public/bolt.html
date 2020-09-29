@@ -9,16 +9,16 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="en_US" />
-<meta property="og:url" content="http://perl11.org/blog/bolt.html" />
+<meta property="og:url" content="https://perl11.github.io/blog/bolt.html" />
 
 
     <link href="" rel="alternate" type="application/rss+xml" title="perl11 blog" />
     <link rel="shortcut icon" href="/favicon.png">
 
-    <link href="http://perl11.org/blog/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
-    <link href="http://perl11.org/blog/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+    <link href="https://perl11.github.io/blogwebfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+    <link href="https://perl11.github.io/blogwebfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
 
-    <link rel="stylesheet" href="http://perl11.org/blog/css/style.css">
+    <link rel="stylesheet" href="https://perl11.github.io/blogcss/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/tomorrow.min.css" crossorigin="anonymous" />
     <link href="http://gmpg.org/xfn/11" rel="profile">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -30,7 +30,7 @@
     <meta name="keywords" content="">
     <meta name="author" content="">
 
-    <meta name="generator" content="Hugo 0.62.0-DEV" />
+    <meta name="generator" content="Hugo 0.69.0" />
 </head>
 
 
@@ -40,10 +40,10 @@
     <div id="header-outer" class="outer">
         <div id="header-inner" class="inner">
             <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
-            <a id="logo" class="logo-text" href="http://perl11.org/blog/">perl11 blog</a>
+            <a id="logo" class="logo-text" href="https://perl11.github.io/blog">perl11 blog</a>
             <nav id="main-nav">
-                <a class="main-nav-link" href="http://perl11.org/">perl11.org</a>
-                <a class="main-nav-link" href="http://perl11.org/cperl/STATUS.html">cperl</a>
+                <a class="main-nav-link" href="https://perl11.github.io/">perl11.github.io</a>
+                <a class="main-nav-link" href="https://perl11.github.io/cperl/STATUS.html">cperl</a>
                 <a class="main-nav-link" href="https://www.rperl.org/">rperl</a>
                 <a class="main-nav-link" href="https://github.com/perl11/cperl/">cperl@github</a>
                 <a class="main-nav-link" href="https://docs.perl6.org/">perl6 docs</a>
@@ -74,7 +74,7 @@
             
         </div>
         <div class="article-entry" itemprop="articleBody">
-            <p>I've tried several traditional linker optimizations on cperl recently.
+            <p>I&rsquo;ve tried several traditional linker optimizations on cperl recently.
 The easiest is</p>
 <h1 id="lto">LTO</h1>
 <p>or &ldquo;Link Time Optimization&rdquo; via <code>gcc -flto=4</code> or <code>clang -flto=thin</code>. This requires the <code>gold</code> linker, and enables multi-threaded
@@ -125,29 +125,29 @@ make -s install
 <code>create_gcov</code> with <code>create_llvm_gcov</code>.  The <code>perl.autofdo</code> target just
 optimizes a static <code>perl</code> executable, not the shared <code>libperl.so</code>, so
 beware. miniperl is always static, so you can measure the impact there
-easier.  For me it's about 20%.</p>
-<p>The main benefit of AutoFDO over PGO is that you don't need two
+easier.  For me it&rsquo;s about 20%.</p>
+<p>The main benefit of AutoFDO over PGO is that you don&rsquo;t need two
 binaries, a profiling one, and the resulting optimized one.</p>
-<p>I haven't checked yet how far the efforts on other systems are,
-getting sampling gcov data from an optimized binary. There's as
+<p>I haven&rsquo;t checked yet how far the efforts on other systems are,
+getting sampling gcov data from an optimized binary. There&rsquo;s as
 <a href="https://www.freebsd.org/cgi/man.cgi?query=hwpmc&amp;sektion=4&amp;manpath=freebsd-release-ports">hwpmc</a>
 driver effort at FreeBSD but you still need to link a
 <a href="https://www.freebsd.org/cgi/man.cgi?query=pmc&amp;sektion=3&amp;apropos=0&amp;manpath=FreeBSD+11.2-RELEASE+and+Ports">-lpmc</a>
 library for hardware counter support.</p>
 <p>DTrace has now <a href="https://www.joyent.com/blog/dtracing-hardware-cache-counters">cpc support</a>,
-but a <strong>DTrace to gcov</strong> script would be needed, as <a href="http://perl11.org/cperl/perldtrace.html">DTrace</a>
+but a <strong>DTrace to gcov</strong> script would be needed, as <a href="https://perl11.github.io/cperl/perldtrace.html">DTrace</a>
 is far better than the linux-only <code>perf</code>.</p>
 <h1 id="prelink">prelink</h1>
 <p><a href="https://community.linuxmint.com/tutorial/view/473">prelink</a> from
 libreoffice is a post-link optimizer.  It fixes up startup
 relocations, but with PIE, ASLR and constantly updated libraries
-it's a bit of a <a href="https://lwn.net/Articles/341244/">hassle</a> and is not
+it&rsquo;s a bit of a <a href="https://lwn.net/Articles/341244/">hassle</a> and is not
 recommended, esp. not on 32bit systems.</p>
 <h1 id="bolt">BOLT</h1>
 <p><a href="https://github.com/facebookincubator/BOLT">llvm-bolt</a> is also a post-link optimizer.
 It analyzes perf traces from a running executable or service, similar to autofdo,
 and then rewrites the binary to be faster.</p>
-<p>I've compiled bolt at <code>/usr/src/llvm/llvm-bolt/build</code>, added the bin path to my PATH
+<p>I&rsquo;ve compiled bolt at <code>/usr/src/llvm/llvm-bolt/build</code>, added the bin path to my PATH
 <code>export PATH=/usr/src/llvm/llvm-bolt/build/bin:$PATH</code>, added the <code>-Wl,-q</code> flag to ldflags
 and lddlflags:</p>
 <pre><code>sed -i -e&quot;s/ldflags='/ldflags='-Wl,-q /&quot; config.sh
@@ -268,12 +268,12 @@ lead you to missed manual optimizations in the source code.</p>
 code and build-environment, to avoid all these compiler and linker
 optimization steps.</p>
 <p>The first problem is to add missing or wrong <code>LIKELY</code>/<code>UNLIKELY</code> hints
-to the branches in the sources.  I'm not aware of any automatic tool
+to the branches in the sources.  I&rsquo;m not aware of any automatic tool
 yet, which can display the location of the data or gcov file of a
 branch-hit or miss. But the source code is pretty good annotated
 already. perf itself gives a few hints in its UI.</p>
 <p>The next problem is how to get the LTO optimizations into the
-Makefiles. We don't need a linker script, re-arranging the order of
+Makefiles. We don&rsquo;t need a linker script, re-arranging the order of
 the objects or just appending all sources into one big C file and
 compile only this would accomplish this. perl is a bit large, the
 compiler would consume too much memory, so I went for the optimization
@@ -281,7 +281,7 @@ of the object linkorder at first.</p>
 <p>There are two problem: permutate the objects itself, and second
 rearrange the functions inside the objects.  Measuring all
 permutations of the 38 objects would need several years, perl cannot
-even represent the number as 64bit integer for a loop counter. So I've
+even represent the number as 64bit integer for a loop counter. So I&rsquo;ve
 tried a guided search on most permutations, from back to forth, and
 stop subsequent permutations at the back when the generated file is slower
 than before.  Something like this:</p>
@@ -369,12 +369,12 @@ See <a href="https://gist.github.com/rurban/67cb4b4046a3538837b6c2aade18ba2f">ht
 linkorder script and result log.</p>
 <h1 id="further-reading">Further reading</h1>
 <p>Relevant are also the size of the environment for a proper stack
-alignment, but we cannot control that. It's over the 2% noise rate though.
+alignment, but we cannot control that. It&rsquo;s over the 2% noise rate though.
 <a href="https://www.seas.upenn.edu/~cis501/papers/producing-wrong-data.pdf">&ldquo;Producing Wrong Data Without Doing Anything Obviously Wrong!&quot;</a> has more
 info about that. It also discusses why sometimes -O2 was faster than -O3,
 and discusses surprising results with perlbench, with -O3, lto (the linkorder)
 and the env size.</p>
-<p>Martin Liška's thesis <a href="https://arxiv.org/abs/1403.6997">Optimizing large applications</a>
+<p>Martin Liška&rsquo;s thesis <a href="https://arxiv.org/abs/1403.6997">Optimizing large applications</a>
 discusses several of those strategies.</p>
 <h1 id="comments-on-rcperlhttpswwwredditcomrcperl">Comments on <a href="https://www.reddit.com/r/cperl/">/r/cperl</a>.</h1>
 
@@ -435,7 +435,7 @@ discusses several of those strategies.</p>
             <ul class="article-tag-list">
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://perl11.org/blog//tags/cperl">cperl
+                    <a class="article-tag-list-link" href="https://perl11.github.io/blog/tags/cperl">cperl
                     </a>
                 </li>
                 

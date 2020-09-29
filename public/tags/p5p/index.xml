@@ -2,33 +2,33 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>p5p on perl11 blog</title>
-    <link>http://perl11.org/blog/tags/p5p.html</link>
+    <link>https://perl11.github.io/blog/tags/p5p.html</link>
     <description>Recent content in p5p on perl11 blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2016 Copyright Reini Urban</copyright>
     <lastBuildDate>Tue, 24 Jan 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://perl11.org/blog/tags/p5p/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://perl11.github.io/blog/tags/p5p/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>p5p incompetence</title>
-      <link>http://perl11.org/blog/p5p-incompetence.html</link>
+      <link>https://perl11.github.io/blog/p5p-incompetence.html</link>
       <pubDate>Tue, 24 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://perl11.org/blog/p5p-incompetence.html</guid>
+      <guid>https://perl11.github.io/blog/p5p-incompetence.html</guid>
       <description>So I was continously asked to explain why I call p5p too incompetent to design anything for the perl5 language and any internal VM features.
-So far I was reluctant to do so, because users will be as emberrassed as I am, and need a way to got forward. Now that I can offer a way forward it might be easier to publish the detailed criticsm on p5p&#39;s incompetence.
-From a high level view it&#39;s pretty easy to prove.</description>
+So far I was reluctant to do so, because users will be as emberrassed as I am, and need a way to got forward. Now that I can offer a way forward it might be easier to publish the detailed criticsm on p5p&amp;rsquo;s incompetence.
+From a high level view it&amp;rsquo;s pretty easy to prove.</description>
     </item>
     
     <item>
       <title>cperl is not a religion</title>
-      <link>http://perl11.org/blog/cperl-is-not-a-religion.html</link>
+      <link>https://perl11.github.io/blog/cperl-is-not-a-religion.html</link>
       <pubDate>Tue, 05 Jul 2016 12:35:00 +0200</pubDate>
       
-      <guid>http://perl11.org/blog/cperl-is-not-a-religion.html</guid>
+      <guid>https://perl11.github.io/blog/cperl-is-not-a-religion.html</guid>
       <description>The recent perl5 management problems are disturbing Criticizing the broken perl5 development process, the managers and esp. various technical problems is suddenly explicitly disallowed in the various perl5 forums by citing a new &amp;ldquo;bad faith&amp;rdquo; code of conduct rule. Mentioning incompetence of submitters is considered uncivil, and mentioning the marketing lies of the previous &amp;ldquo;pumpkin&amp;rdquo; (admin) is also considered uncivil. But lying, abusing the powers, and constant usage and even encouragement of foul language is interestingly not considered uncivil.</description>
     </item>
     

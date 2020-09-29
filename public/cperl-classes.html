@@ -9,16 +9,16 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="en_US" />
-<meta property="og:url" content="http://perl11.org/blog/cperl-classes.html" />
+<meta property="og:url" content="https://perl11.github.io/blog/cperl-classes.html" />
 
 
     <link href="" rel="alternate" type="application/rss+xml" title="perl11 blog" />
     <link rel="shortcut icon" href="/favicon.png">
 
-    <link href="http://perl11.org/blog/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
-    <link href="http://perl11.org/blog/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+    <link href="https://perl11.github.io/blogwebfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+    <link href="https://perl11.github.io/blogwebfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
 
-    <link rel="stylesheet" href="http://perl11.org/blog/css/style.css">
+    <link rel="stylesheet" href="https://perl11.github.io/blogcss/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/tomorrow.min.css" crossorigin="anonymous" />
     <link href="http://gmpg.org/xfn/11" rel="profile">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -30,7 +30,7 @@
     <meta name="keywords" content="">
     <meta name="author" content="">
 
-    <meta name="generator" content="Hugo 0.62.0-DEV" />
+    <meta name="generator" content="Hugo 0.69.0" />
 </head>
 
 
@@ -40,10 +40,10 @@
     <div id="header-outer" class="outer">
         <div id="header-inner" class="inner">
             <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
-            <a id="logo" class="logo-text" href="http://perl11.org/blog/">perl11 blog</a>
+            <a id="logo" class="logo-text" href="https://perl11.github.io/blog">perl11 blog</a>
             <nav id="main-nav">
-                <a class="main-nav-link" href="http://perl11.org/">perl11.org</a>
-                <a class="main-nav-link" href="http://perl11.org/cperl/STATUS.html">cperl</a>
+                <a class="main-nav-link" href="https://perl11.github.io/">perl11.github.io</a>
+                <a class="main-nav-link" href="https://perl11.github.io/cperl/STATUS.html">cperl</a>
                 <a class="main-nav-link" href="https://www.rperl.org/">rperl</a>
                 <a class="main-nav-link" href="https://github.com/perl11/cperl/">cperl@github</a>
                 <a class="main-nav-link" href="https://docs.perl6.org/">perl6 docs</a>
@@ -162,10 +162,10 @@ as hash keys where compile-time optimized to linear-time array access
 to the magic <code>@Rectangle::FIELDS</code> array.  The hash was made restricted,
 ensuring typos in the field names would lead to compile-time errors
 when those keys did not exist.</p>
-<p>With perl6 or cperl fields you've got the same feature; just a
+<p>With perl6 or cperl fields you&rsquo;ve got the same feature; just a
 different, more functional implementation. &ldquo;functional&rdquo; meaning
 features are hidden between functions, not datatypes. Supporting
-datatypes in an API will forever restrict it's usage to this specific
+datatypes in an API will forever restrict it&rsquo;s usage to this specific
 datatype, you will not be able to change the underlying structures and
 algorithms. This was the biggest mistakes perl and python did at the beginning.</p>
 <h1 id="encapsulated-fields">Encapsulated fields</h1>
@@ -180,7 +180,7 @@ to access the private fields also.</p>
 perl6.  You should use the method syntax, not a hash or array access
 syntax. Internally this method is then compiled to the most efficient
 op or method.</p>
-<p>The Moose syntax is more different to perl6 than cperl. And it's
+<p>The Moose syntax is more different to perl6 than cperl. And it&rsquo;s
 implemention is beyond naive. But theoretically this could be
 improved, the biggest problem is still the troublesome syntax, based
 on the naive implementation restrictions.</p>
@@ -268,7 +268,7 @@ system, and vice versa.
 Ruby on rails (ab)used the MOP all over which makes it imposible to scale.
 With a proper OO design as in Sinatra/Dancer with delegated classes known at
 compile-time you can easily scale and optimize such a system. A MOP is a very
-poor adhoc method to workaround a proper OO design. It's nice for prototypes,
+poor adhoc method to workaround a proper OO design. It&rsquo;s nice for prototypes,
 such as Moose, which is a very immature adhoc prototype, but it should never
 make it into a production system.</p>
 <h1 id="difference-from-class-to-package">Difference from class to package</h1>
@@ -289,14 +289,14 @@ and not 4 words as a normal scalar value.</p>
 <p>Intermediate classes create via role mixins (the <code>does</code> keyword) are
 stored in the class slot of every object and refer to class stashes.
 But when you mix types or multiple classes combined via <code>and</code> or
-<code>or</code> you cannot use a stash, you'd need a list of stashes.</p>
+<code>or</code> you cannot use a stash, you&rsquo;d need a list of stashes.</p>
 <p>perl6 solved this problem by switching from stashes to objects.
 perl5 solved this via creating temporary anon classes to hold mixins, and
 <code>mro</code>/<code>@ISA</code> to support multiple inheritance.</p>
 <p>cperl composes mixins at compile-time, without the need to hold anon
 classes at all.</p>
 <h1 id="multiple-dispatch---polymorphism">Multiple dispatch - polymorphism</h1>
-<p>cperl 5.28 does not support the <strong>multi</strong> keyword yet, there's no
+<p>cperl 5.28 does not support the <strong>multi</strong> keyword yet, there&rsquo;s no
 polymorph dispatch on methods with the same name (generics) but
 varying number and type of arguments yet. polymorphism solves the problem of
 generic methods, which do the same but its implemention deviates on the given
@@ -316,14 +316,14 @@ it would be even named &ldquo;import@[package.pm,10-12]&quot;.  perl5 anonymizes
 names when the GV symbol is being thrown away to <code>__ANON__</code>, esp. with
 import methods.</p>
 <h1 id="limitations">Limitations</h1>
-<p>5.28 still has some class <a href="http://perl11.org/cperl/perlclass.html#LIMITATIONS">limitations</a>.</p>
+<p>5.28 still has some class <a href="https://perl11.github.io/cperl/perlclass.html#LIMITATIONS">limitations</a>.</p>
 <p>The number of fields is limited, as in C.</p>
 <p>The inliner is not yet implemented, so field index fixups with roles are not supported yet.
 When copying a method from a role to a class, and the field index from the role method would
 be different to a field index in the resulting class, the method is not yet fixed up to the
 new indices. A temp. solution would be to change the ordering of the roles, or to use the
 <code>$self-&gt;field</code> method syntax in the role method. This requires the not yet finished inliner.
-Currently we can only alias composed role methods and we don't change the ordering of the fields.</p>
+Currently we can only alias composed role methods and we don&rsquo;t change the ordering of the fields.</p>
 <p>eval &lsquo;class {}&rsquo; fails</p>
 <p>A class cannot be created in an eval block or subroutine. The pad lookup is still global and
 not per optional CvPADLIST. During development of cperl 5.28 I found the
@@ -338,7 +338,7 @@ sub { $a[1] = 1 }-&gt;();
 <p>missed the compile-time error inside the closed-over sub.
 Also all uoob (compile-time out-of-bounds checks) optimizations were missing on those nested fake PADs.
 So I had to add a new pad API <code>pad_findmy_real</code> to find the real pad/type of a nested lexical variable.</p>
-<h1 id="comments-on-rcperlhttpswwwredditcomrcperlcomments9evcewcperl-classes">Comments on <a href="https://www.reddit.com/r/cperl/comments/9evcew/cperl_classes/">/r/cperl</a>.</h1>
+<h1 id="comments-on-rcperlhttpswwwredditcomrcperlcomments9evcewcperl_classes">Comments on <a href="https://www.reddit.com/r/cperl/comments/9evcew/cperl_classes/">/r/cperl</a>.</h1>
 
         </div>
 
@@ -397,12 +397,12 @@ So I had to add a new pad API <code>pad_findmy_real</code> to find the real pad/
             <ul class="article-tag-list">
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://perl11.org/blog//tags/cperl">cperl
+                    <a class="article-tag-list-link" href="https://perl11.github.io/blog/tags/cperl">cperl
                     </a>
                 </li>
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://perl11.org/blog//tags/oo">oo
+                    <a class="article-tag-list-link" href="https://perl11.github.io/blog/tags/oo">oo
                     </a>
                 </li>
                 

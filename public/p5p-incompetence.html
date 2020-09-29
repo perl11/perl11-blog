@@ -9,16 +9,16 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="en_US" />
-<meta property="og:url" content="http://perl11.org/blog/p5p-incompetence.html" />
+<meta property="og:url" content="https://perl11.github.io/blog/p5p-incompetence.html" />
 
 
     <link href="" rel="alternate" type="application/rss+xml" title="perl11 blog" />
     <link rel="shortcut icon" href="/favicon.png">
 
-    <link href="http://perl11.org/blog/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
-    <link href="http://perl11.org/blog/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+    <link href="https://perl11.github.io/blogwebfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+    <link href="https://perl11.github.io/blogwebfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
 
-    <link rel="stylesheet" href="http://perl11.org/blog/css/style.css">
+    <link rel="stylesheet" href="https://perl11.github.io/blogcss/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/tomorrow.min.css" crossorigin="anonymous" />
     <link href="http://gmpg.org/xfn/11" rel="profile">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -30,7 +30,7 @@
     <meta name="keywords" content="">
     <meta name="author" content="">
 
-    <meta name="generator" content="Hugo 0.62.0-DEV" />
+    <meta name="generator" content="Hugo 0.69.0" />
 </head>
 
 
@@ -40,10 +40,10 @@
     <div id="header-outer" class="outer">
         <div id="header-inner" class="inner">
             <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
-            <a id="logo" class="logo-text" href="http://perl11.org/blog/">perl11 blog</a>
+            <a id="logo" class="logo-text" href="https://perl11.github.io/blog">perl11 blog</a>
             <nav id="main-nav">
-                <a class="main-nav-link" href="http://perl11.org/">perl11.org</a>
-                <a class="main-nav-link" href="http://perl11.org/cperl/STATUS.html">cperl</a>
+                <a class="main-nav-link" href="https://perl11.github.io/">perl11.github.io</a>
+                <a class="main-nav-link" href="https://perl11.github.io/cperl/STATUS.html">cperl</a>
                 <a class="main-nav-link" href="https://www.rperl.org/">rperl</a>
                 <a class="main-nav-link" href="https://github.com/perl11/cperl/">cperl@github</a>
                 <a class="main-nav-link" href="https://docs.perl6.org/">perl6 docs</a>
@@ -78,18 +78,18 @@
 design anything for the perl5 language and any internal VM features.</p>
 <p>So far I was reluctant to do so, because users will be as emberrassed as I
 am, and need a way to got forward. Now that I can offer a way forward it
-might be easier to publish the detailed criticsm on p5p's incompetence.</p>
-<p>From a high level view it's pretty easy to prove.  p5p, the perl5
+might be easier to publish the detailed criticsm on p5p&rsquo;s incompetence.</p>
+<p>From a high level view it&rsquo;s pretty easy to prove.  p5p, the perl5
 porters was originally a mailing list to help Larry Wall, the language
 creator to maintain ports to other platforms. like solaris, hpux,
-irix, os/2, windows and so on. That's why it's called porters, and not
+irix, os/2, windows and so on. That&rsquo;s why it&rsquo;s called porters, and not
 perl5-dev, perl5-lang or something.
 Then, when Larry Wall stopped maintaining perl5 and went on to perl6, p5p
 took over maintainance of perl5 from him.
-Let's roughly say p5p started 2001 and hopefully will be freed from maintaining
+Let&rsquo;s roughly say p5p started 2001 and hopefully will be freed from maintaining
 the language and the vm 2016, 15 years.</p>
 <p>In these 15 years p5p did almost nothing good, and a lot of things very bad.</p>
-<h1 id="lets-start-with-the-good-things">let's start with the good things:</h1>
+<h1 id="lets-start-with-the-good-things">let&rsquo;s start with the good things:</h1>
 <ul>
 <li>
 <p>lang:</p>
@@ -113,7 +113,7 @@ seen in parrot.</p>
 <p>defined-or is trivial, but the discussion about the syntax was so
 painful, that Tom Christianson left p5p over that, which got Larry
 very angry. and &lsquo;//&rsquo; for defined-or and not something with matching is
-also very ill-designed. That's the only new syntax since decades.</p>
+also very ill-designed. That&rsquo;s the only new syntax since decades.</p>
 <p>The 5.10 rearchitecture by one person was still 10% slower than 5.8.9,
 (only startup time got faster)
 And broke many important internal B modules, like the compiler, the
@@ -131,8 +131,8 @@ perform before.</p>
 <p>smartmatch was always plagued by the lack of coretypes and the subsequent
 over-architecturing of the possible lhs-rhs match combinations.
 without working lexical <code>$_</code> it is also doomed.</p>
-<p>Note that p5p didn't implement given/when and smartmatch, it came from
-outside.  That's why they have so many problems to maintain it.</p>
+<p>Note that p5p didn&rsquo;t implement given/when and smartmatch, it came from
+outside.  That&rsquo;s why they have so many problems to maintain it.</p>
 <h1 id="bad">bad:</h1>
 <ul>
 <li>removed automatic compile-time optimizations in constant-folder</li>
@@ -169,7 +169,7 @@ outside.  That's why they have so many problems to maintain it.</p>
 against the explicit analysis of the community.
 Now perl5 has the semantic problem that obvious constant values cannot
 be treated as constants. cperl fixed that by going back to the pre-p5p semantics
-(5.005), but that's the only major mismatch. It is only a problem with integer
+(5.005), but that&rsquo;s the only major mismatch. It is only a problem with integer
 overflows.</p>
 <h2 id="no-adoption-of-the-initially-designed-type-system">no adoption of the initially designed type system</h2>
 <p>perl6 has one, cperl has one, everyone is happy, just p5p bitches
@@ -178,11 +178,11 @@ Now after a few years even all other dynamic languages implemented it
 only p5p is still clueless.</p>
 <h2 id="no-adoption-of-classmethod-use-oo-final-multi-dispatch">no adoption of class/method, use oo :final, multi-dispatch</h2>
 <p>perl5 has an extremely slow OO system, without any features.  It can
-be extended, but then it's even 10x slower. There's no internal
+be extended, but then it&rsquo;s even 10x slower. There&rsquo;s no internal
 support for the needed features. Those features were designed 15 years
-ago, so there's no need for external experimentation.  Moose is a
+ago, so there&rsquo;s no need for external experimentation.  Moose is a
 horrible abomination of those features and syntax. Spiffy, Mouse or
-Dios do come closer but it's still a long stretch to a useful OO
+Dios do come closer but it&rsquo;s still a long stretch to a useful OO
 system.</p>
 <p>Everybody is talking about the need of a MOP, but nobody knows what a
 OO vs MOP is. What is needed is an OO with introspection, but not a
@@ -213,8 +213,8 @@ exposed as methods, and the compilers knows what is what.</p>
 <p>Marc Jason Dominus explains at the <a href="https://www.youtube.com/watch?v=-HlGQtAuZuY">Pittburgh Perl Workshp 2014</a>
 how the perl community is not able to understand it why their attempt
 to maintain this feature utterly failed. &ldquo;A new, never-before-seen
-talk on Perl's catastrophic experiment with “pseudohashes”, which
-wasted everyone's time for nine years between 1998 and 2007.&rdquo; His
+talk on Perl&rsquo;s catastrophic experiment with “pseudohashes”, which
+wasted everyone&rsquo;s time for nine years between 1998 and 2007.&rdquo; His
 words, not mine.</p>
 <h2 id="horrible-over-architecturing-everything-damian-conway-did">horrible over-architecturing everything damian conway did</h2>
 <p>Thanksfully not much of him is in core.</p>
@@ -233,7 +233,7 @@ attribute will call <code>unlink &quot;a/file&quot;</code> at compile-time.</p>
 in many XS extensions and esp. a concurrent hash table.  This was not state
 of the art those times.</p>
 <p>But the pseudo threads (ithreads) should not have been called threads.
-there's no proper COW support, all the data needs to be be cloned to each
+there&rsquo;s no proper COW support, all the data needs to be be cloned to each
 new thread, so you got a huge initialization hit. And the run-time supports
 no ownership or capabilities, so all the data needs to linked back and forth
 manually.</p>
@@ -253,7 +253,7 @@ egregious perl5 design mistakes were solved.</p>
 <h2 id="incompetence-maintaining-b">incompetence maintaining B</h2>
 <p>Since the B instrospection module needs to able to represent all the
 internal core data structures to pure-perl users, but only the simpliest B
-modules were left intact with the 5.10 axe, it's hardly surprising that B
+modules were left intact with the 5.10 axe, it&rsquo;s hardly surprising that B
 started bitrotting. nobody cared anymore, it was only used for the
 B::Deparse toy, which never worked 100%, and B::Concise, a simple display of
 the ops.</p>
@@ -283,7 +283,7 @@ values.  A function is everywhere a big scalar.</p>
 Not for arguments and return values, not for lexicals and temporaries.
 The normal design problem in a computer language how to find &ldquo;upvalues&rdquo;,
 lexicals which are not temporaries on the stack, but rather are closed over
-on stacks of upper functions. In perl5 this was simplified by using &ldquo;pad's&rdquo;,
+on stacks of upper functions. In perl5 this was simplified by using &ldquo;pad&rsquo;s&rdquo;,
 seperate flat arrays with indices or usable and reachable ranges. This is
 quite ok, but accessing a stack entry is still 50x faster.
 And mosty writing a temporary or lexical is very slow in perl5, as you
@@ -311,7 +311,7 @@ Every self-respecting language supports bounds checks elimination.</p>
 <pre><code>$ perl -e'@a=(0,1);print $a[~1]'
 0
 </code></pre>
-<p>~1 is essentially (UV)-2 or 0xffff_fffe. It's the highest unsigned
+<p>~1 is essentially (UV)-2 or 0xffff_fffe. It&rsquo;s the highest unsigned
 positive value - 1, but here in this case it wraps around to -2. Which
 is arguably wrong.  But this is different to that:</p>
 <pre><code>$ perl -Dt -e'print $a[~1]'
@@ -341,7 +341,7 @@ And now the best trick:</p>
 index 0 and returns its value. Same as above where ~1 silently
 overflows to -2.  cperl fixed that btw. by throwing a compile-time
 &lsquo;Too many elements&rsquo; error.  Silent wrapping on overflow is not a
-language feature, it's a bug. Only p5p keeps up with the narrative
+language feature, it&rsquo;s a bug. Only p5p keeps up with the narrative
 that this a feature as designed.</p>
 <h1 id="hash">hash:</h1>
 <p>There is no knowledge of hash tables within p5p. The first re-implemention
@@ -368,20 +368,20 @@ company. Just in C++.</p>
 theatre, not rational thinking. Everybody else uses move-to-front,
 perl uses randomized iterators and random flipping.  perl5 uses a 100%
 fill rate, while testing a proper fillrate lead to better rates with
-80-90% as everyone else. There's not even an option to try it,
+80-90% as everyone else. There&rsquo;s not even an option to try it,
 and then using <code>_builtin_ctz</code> (count trailing zeros) to use it efficiently.</p>
 <p>Rewriting the horrible hash tables to a proper open chained cache
 friendly variant would be a very nice to have, but since the p5p
-refactoring made it so bad, it's a really hard job to do now.  There
+refactoring made it so bad, it&rsquo;s a really hard job to do now.  There
 four different hash searches around, three different hash table
-element types. There's no abstraction, so many external XS modules
+element types. There&rsquo;s no abstraction, so many external XS modules
 have to access internals looping through the collisions.  It would
-have been trivial with Larry's old hash tables.
+have been trivial with Larry&rsquo;s old hash tables.
 I needed essentially half a year just to abstract away all the
 existing cruft, to be able to try out the usual hash table
 variants. So better hash tables are not in v5.26c.</p>
 <p>Marc Jason Dominus gives a trivial explanation of perl chaining vs
-python's linear addressing 2015 at
+python&rsquo;s linear addressing 2015 at
 <a href="https://www.youtube.com/watch?v=u14GpzuTBjg">https://www.youtube.com/watch?v=u14GpzuTBjg</a>
 but cannot explain performance benefits, how and why perl tombstones
 are needed (he says only python needs it), nor explain any modern hash
@@ -396,7 +396,7 @@ table security and performance.</p>
 warning or error. Longer keys are silently accepted and hashed, but
 the hash is wrong because the length silently overflows and the key is
 wrong because it is too short. Technically you could accept longer
-keys and turn them into SV's, but even this is not done.
+keys and turn them into SV&rsquo;s, but even this is not done.
 This is not a policy, this is pure incompetence.
 cperl errors with overlong names/hash keys.</p>
 <h1 id="regex">regex:</h1>
@@ -409,16 +409,16 @@ with a linear run-time without backtracking.</p>
 <p>The problem of backtracking stack exhaustion was not fixed by
 switching the compiler, and using the 2 pass information. Rather the
 simple and maintainable recursion code was rewritten into iteration,
-leading to even worse and slower code. There's still no stack limit.
+leading to even worse and slower code. There&rsquo;s still no stack limit.
 So the small stack limit is now replaced by the larger heap limit,
-leading to even nicer and more effective DOS attacks. davem's rewrite
-didn't make it safer, but worse and 10% slower. He's still proud of
+leading to even nicer and more effective DOS attacks. davem&rsquo;s rewrite
+didn&rsquo;t make it safer, but worse and 10% slower. He&rsquo;s still proud of
 it though.</p>
-<p>There's no sign of taking over libpcre, which has a jit in the
+<p>There&rsquo;s no sign of taking over libpcre, which has a jit in the
 mean time, and add the missing unicode name support there. The libpcre
 maintainers are clearly more competent than p5p and this might have
 led to undesirable discussions.
-Note that the p5p regex maintainers have no idea what I'm talking
+Note that the p5p regex maintainers have no idea what I&rsquo;m talking
 about here. They also ridiculed Russ Cox when he complained and
 offered improvements. What they did then was the policital correct
 idea, to offer an API for alternative implementations because they
@@ -426,28 +426,28 @@ were not able to fix their own. This did not help at all.</p>
 <h1 id="functions">functions:</h1>
 <p>How perl5 calls a function is horrible, first because of the primitive initial
 design with custom stacks and pads. The ability to localize and throw from
-everywhere (there's no compile time detection and optimization). The lack of
+everywhere (there&rsquo;s no compile time detection and optimization). The lack of
 typed signatures, all the args and return values are copied to @_, and not
 kept on the stack as with better XS interface.</p>
 <h1 id="methods">methods:</h1>
 <p>perl5 supports only single dispatch on the first argument. Improving
 the other builtin ops, esp. binops but also generic ops works via
 overloading them, i.e. runtime lookup if this method is overloaded.</p>
-<p>There's no multiple dispatch as in perl6, and the usual strategy to
+<p>There&rsquo;s no multiple dispatch as in perl6, and the usual strategy to
 speed up such method calls is &ldquo;PIC&rdquo;, polymorphic inline caching, which
 might store a hash of all used classed per method to avoid costly
 run-time lookups.  There came a patch from russia, which implemented
 that quite efficiently, but p5p managed to simplify that down to a
 naive monomorphic inline caching (only cache the latest), which is
-what we have since with 5.22.  That's why it's suddenly 20% faster but
+what we have since with 5.22.  That&rsquo;s why it&rsquo;s suddenly 20% faster but
 could have been 30%.</p>
 <p>They never heard of that term, and it is better to avoid any technical
 terms with them, as they they have no idea what you are talking about.
 Their are mostly sysadmins with no CS background.  But they are very
 happy to invent new terms for existing technologies under a different
 name to avoid scrunity.  e.g. they call mixins &ldquo;roles&rdquo; and attributes &ldquo;traits&rdquo;.</p>
-<p>There's no method keyword, and the existing <code>:method</code> attribute bitrotted
-because it is of no use. As signatures and an object system didn't make it
+<p>There&rsquo;s no method keyword, and the existing <code>:method</code> attribute bitrotted
+because it is of no use. As signatures and an object system didn&rsquo;t make it
 into perl5.</p>
 <p>There is a lot of talking about a &ldquo;Modern Perl&rdquo; movement, using Moose and
 signatures, but they have no idea what they are talking about.  Moose is a
@@ -472,15 +472,15 @@ of stashes (stash = symbol table hash). This also leads to surprising
 language inconsistencies which initially was considered a language
 quirks, which would be eventually fixed (and it would be quite trivial
 to fix), but just this year p5p announced suddenly that it will never
-be fixed. it's now part of the language.</p>
-<p>I'm speaking of autovivification, the fact that when you ask if a symbol or
+be fixed. it&rsquo;s now part of the language.</p>
+<p>I&rsquo;m speaking of autovivification, the fact that when you ask if a symbol or
 stash exists, it does not exist, but all intermediate stashes in the
 namespace get magically polluted by that query, and a query to a previously
-not existing stash will now return yes. It's a parser bug with the namespace
+not existing stash will now return yes. It&rsquo;s a parser bug with the namespace
 lookup, which will be fixed with cperl and is fixed in perl6. But p5p
 decided that such a bug is now a feature. Action at a distance is a language
 feature, because perl is magic and dynamic.
-In my opinion it's only caused by gross p5p incompetence, not even knowing
+In my opinion it&rsquo;s only caused by gross p5p incompetence, not even knowing
 the history of perl5 anymore. This bug was always considered a bug.</p>
 <p>See also unicode security below.</p>
 <h1 id="binary-symbols-and-names">binary symbols and names:</h1>
@@ -514,7 +514,7 @@ very problematic regarding
 of confusables, mixed scripts and syntax spoofs. In perl5 it is easy
 to hide malicious unicode code in source code, i.e. hiding in hidden
 right-to-left sequences or hiding different names with similar looking
-characters, and there's no confusables check in the parser, something
+characters, and there&rsquo;s no confusables check in the parser, something
 like <code>use strict 'names'</code> to accept only parsable names without
 accepting confusables. cperl fixed a couple of major unicode security
 issues since and follows the unicode security profiles for identifiers.
@@ -556,7 +556,7 @@ slower to access and needs manual destruction. Destruction on the
 stack is free. The stack is also not refcounted. <em>(Thanksfully, but
 they want to dstroy even that nowadays.)</em></p>
 <p>Perl needs to optimize special arithmetic op sequences to use unboxed
-integers and strings on the stack. There's a reason why in normal
+integers and strings on the stack. There&rsquo;s a reason why in normal
 languages short lived variables are kept on the stack and not on the
 heap. Why values can easily be updated.  cperl does experiment in
 allowing unboxed values on the stack, because the stack is not garbage
@@ -634,11 +634,11 @@ post lists all of the important modules maintenance failures as of
 in this post, since I personally fixed all of these problems by
 myself, but I was blocked by the maintainers to respond to the
 criticism there.</p>
-<p>But there's much more. Rarely passes a p5p maintained module the basic
+<p>But there&rsquo;s much more. Rarely passes a p5p maintained module the basic
 bullshit test.  Storable cannot deal with overlarge data and writes on
 its stack. Unicode::UCD is as horrible as the internal unicode invlist
 layout, using plain huge strings in files, which are split at runtime
-to invlists, stored in SV's, and then binary searched. Which is 800%
+to invlists, stored in SV&rsquo;s, and then binary searched. Which is 800%
 slower and much larger than a normal pre-compiled data structure, as
 it would have been done when a cpan author would have maintained
 it. Such as e.g. Encode or Unicode::Normalize.  And this static
@@ -663,14 +663,14 @@ fix a few of them, but make every effort not to cherry pick my
 fixes. Active hostility and refusal to cooperate.</p>
 <p>Just look at the many many security problems cperl has fixed
 since. p5p only picked up one of it: <code>-Dfortify_inc</code> but even managed to
-change it's API since then.</p>
+change it&rsquo;s API since then.</p>
 <p>I warned against binary and unicode symbols since its invention with
 5.16.  Nothing has happened since, only cperl made progress in
 disallowing mixed scripts and normalizing identifiers.</p>
 <h1 id="death-by-code-of-conduct">Death by code of conduct</h1>
 <p>The last maintainer had the idea to improve the discussion problems,
 the constant angry and fruitless discussions, name calling and racist
-remarks by a new code of conduct. It didn't help, instead it
+remarks by a new code of conduct. It didn&rsquo;t help, instead it
 backfired. Certain p5p members who still happily enjoy to break the
 new code of conduct are not even warned about breaking any rule, they
 still serve as public figure heads, give the main YAPC conference
@@ -702,15 +702,15 @@ causing pain to cpan maintainers and generally doing and talking
 nonsense. This is the main reason why I became active in protesting
 these tendencies.</p>
 <p>Most more competent people left the perl community silently years ago,
-there's no talent anymore, that's why it's easy to come up with such
+there&rsquo;s no talent anymore, that&rsquo;s why it&rsquo;s easy to come up with such
 an incompetent group and maintain this status for 15 years.  And
-sometimes, when there's fresh talent, and actually turned out to come
-with better ideas and implementatioms those ideas don't make it into
+sometimes, when there&rsquo;s fresh talent, and actually turned out to come
+with better ideas and implementatioms those ideas don&rsquo;t make it into
 the codebase. The dead wood is protecting its turf.</p>
 <p>I offered solutions to fix those problems multiple times, and was
 being shouted at.  The only thing helping now is to dissolve the perl5
 porters from being the language maintainers committee, and just be the
-porters. that's what they can do. Nothing else.  Immediately remove
+porters. that&rsquo;s what they can do. Nothing else.  Immediately remove
 commit access to the ones who are doing the ongoing damage.  There is
 no need for them acting like a language committee since Larry and then
 perl6 already did that, just ensure to keep backwards compatibility.</p>
@@ -723,7 +723,7 @@ managebility. Most features were brought in by bypassing processes
 and management.</p>
 <p>In cperl and perl6 we use public trackers and irc, no mailing-list.
 Features and bugfixes are developed by proper process.</p>
-<h1 id="comments-on-rcperlhttpswwwredditcomrcperlcomments5xof5np5p-incompetence">Comments on <a href="https://www.reddit.com/r/cperl/comments/5xof5n/p5p_incompetence/">/r/cperl</a></h1>
+<h1 id="comments-on-rcperlhttpswwwredditcomrcperlcomments5xof5np5p_incompetence">Comments on <a href="https://www.reddit.com/r/cperl/comments/5xof5n/p5p_incompetence/">/r/cperl</a></h1>
 <p>&ndash;
 Reini Urban</p>
 
@@ -801,7 +801,7 @@ Reini Urban</p>
             <ul class="article-tag-list">
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://perl11.org/blog//tags/p5p">p5p
+                    <a class="article-tag-list-link" href="https://perl11.github.io/blog/tags/p5p">p5p
                     </a>
                 </li>
                 

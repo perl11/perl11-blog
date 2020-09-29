@@ -9,16 +9,16 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="en_US" />
-<meta property="og:url" content="http://perl11.org/blog/attributes-args.html" />
+<meta property="og:url" content="https://perl11.github.io/blog/attributes-args.html" />
 
 
     <link href="" rel="alternate" type="application/rss+xml" title="perl11 blog" />
     <link rel="shortcut icon" href="/favicon.png">
 
-    <link href="http://perl11.org/blog/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
-    <link href="http://perl11.org/blog/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+    <link href="https://perl11.github.io/blogwebfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+    <link href="https://perl11.github.io/blogwebfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
 
-    <link rel="stylesheet" href="http://perl11.org/blog/css/style.css">
+    <link rel="stylesheet" href="https://perl11.github.io/blogcss/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/tomorrow.min.css" crossorigin="anonymous" />
     <link href="http://gmpg.org/xfn/11" rel="profile">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -30,7 +30,7 @@
     <meta name="keywords" content="">
     <meta name="author" content="">
 
-    <meta name="generator" content="Hugo 0.62.0-DEV" />
+    <meta name="generator" content="Hugo 0.69.0" />
 </head>
 
 
@@ -40,10 +40,10 @@
     <div id="header-outer" class="outer">
         <div id="header-inner" class="inner">
             <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
-            <a id="logo" class="logo-text" href="http://perl11.org/blog/">perl11 blog</a>
+            <a id="logo" class="logo-text" href="https://perl11.github.io/blog">perl11 blog</a>
             <nav id="main-nav">
-                <a class="main-nav-link" href="http://perl11.org/">perl11.org</a>
-                <a class="main-nav-link" href="http://perl11.org/cperl/STATUS.html">cperl</a>
+                <a class="main-nav-link" href="https://perl11.github.io/">perl11.github.io</a>
+                <a class="main-nav-link" href="https://perl11.github.io/cperl/STATUS.html">cperl</a>
                 <a class="main-nav-link" href="https://www.rperl.org/">rperl</a>
                 <a class="main-nav-link" href="https://github.com/perl11/cperl/">cperl@github</a>
                 <a class="main-nav-link" href="https://docs.perl6.org/">perl6 docs</a>
@@ -89,7 +89,7 @@ attributes.</p>
 <p>A <code>&amp;MyClass::FETCH_SCALAR_ATTRIBUTES</code> hook would be called on every
 not-builtin <code>MyClass::</code> scalar attribute at run-time, and
 <code>&amp;MyClass::MODIFY_SCALAR_ATTRIBUTES</code> at compile-time.</p>
-<p>If you would want to process attributes in all classes you'd need to add <code>UNIVERSAL</code> hooks
+<p>If you would want to process attributes in all classes you&rsquo;d need to add <code>UNIVERSAL</code> hooks
 or use handlers like <code>Attribute::Handlers</code>.
 This would simplify declaring code for attributes.</p>
 <pre><code>sub Good : ATTR(SCALAR) {
@@ -112,7 +112,7 @@ This would be the correct declaration: <code>my MyClass $obj :Good(&quot;print a
 So <code>Attribute::Handlers</code> is entirely unsafe by evaluating all attribute arguments.</p>
 <p>But Damian was right thinking of the use-cases. Attribute arguments
 are needed to attach certain data to a variable of function. He just
-didn't implement it properly, as with all of his modules.</p>
+didn&rsquo;t implement it properly, as with all of his modules.</p>
 <p>E.g. in cperl we added type support via attributes:
 <code>sub calc ($a:int) :int { $a + 10 }</code> declares calc as returning an <code>int</code> type, and the
 <code>$a</code> argument to accept <code>int</code> types.</p>
@@ -148,9 +148,9 @@ first zavolaj example the <code>lib</code> prefix stated explictly. <code>is nat
 <p>This will not work on windows and cygwin.  cygwin needs a <code>cyg</code> prefix
 and a version suffix, the dll is called <code>cygmysqlclient-18.dll</code>.</p>
 <p>On windows the library would be called <code>libmysql.dll</code>, but this varies
-wildly, as there's no naming convention for shared libs, only for
+wildly, as there&rsquo;s no naming convention for shared libs, only for
 import libs.</p>
-<p>The world is not made for FFI's, just for linking libraries at
+<p>The world is not made for FFI&rsquo;s, just for linking libraries at
 compile-time. There a <code>-lmysqlclient</code> is enough, on windows this would
 find <code>libmysqlclient.dll.a</code> or <code>libmysqlclient.lib</code>, which is an
 import library which refers to the proper versioned name of the
@@ -171,7 +171,7 @@ attribute argument <code>$libname</code> at run-time. What perl5 does is parsing
 <code>:native($libname)</code> to the string <code>'native($libname)'</code> and passes it
 to <code>BEGIN { use attributes ... ':native($libname)'; }</code>.</p>
 <p>Note <code>':native($libname)'</code> and not <code>&quot;:native($libname)&quot;</code>,
-i.e. <code>$libname</code> is not expanded to it's value, and it would not help much
+i.e. <code>$libname</code> is not expanded to it&rsquo;s value, and it would not help much
 as the call happens at compile-time, so <code>$libname</code> would have been empty still.</p>
 <p>What it should have done instead is to inject the code
 <code>use attributes ... &quot;native($libname)&quot;;</code>, which is the equivalent of</p>
@@ -187,14 +187,14 @@ all. Everything is passed as string to the importer, and the hook
 needs to parse the argument. Hence the Attribute:Handler security
 nightmare, simply calling eval on all args. Which is a lot of fun
 e.g. with a documentation attribute with <code>App::Rad</code>, when your
-docstring is eval'ed.</p>
+docstring is eval&rsquo;ed.</p>
 <p>Now with cperl there are now two kind of builtin attributes. The old
 :prototype args are still compiled as barewords, but the new :native
 and :symbol attribute args (and probably more upcoming) are compiled
 as data, with constant strings being compiled at compile-time, and
 scalar values being defered to run-time.  Just as with <code>use attributes &quot;native&quot;, $libname;</code></p>
 <h1 id="internally">Internally</h1>
-<p>Internally perl5 has 3 attrs API's. Two of them are useful, if still broken.</p>
+<p>Internally perl5 has 3 attrs API&rsquo;s. Two of them are useful, if still broken.</p>
 <p><code>apply_attrs</code> is the compile-time variant, passing the verbatim string
 with the argument to the attribute import call at compile-time.</p>
 <p>This translates <code>sub func :native($libname)</code> to
@@ -225,7 +225,7 @@ a scalar variable or function call is detected.</p>
 <p>So far I treat :native and :symbol barewords as constant strings and
 not as function calls.
 I.e. <code>:native(mysqlclient)</code> does not call the mysqlclient function to return the name.
-Attribute::Handler would do that. I'll probably add that with the more explicit
+Attribute::Handler would do that. I&rsquo;ll probably add that with the more explicit
 <code>:native(&amp;mysqlclient)</code> syntax.</p>
 <h1 id="why-attributes">Why attributes?</h1>
 <p>A better idea than attributes to attach data would have been metadata
@@ -247,7 +247,7 @@ attribute syntax for perl6 <code>traits</code>.</p>
 <li><a href="https://github.com/perl11/cperl/issues/291">Resolve core attribute arguments, runtime setters, safely #291</a></li>
 <li><a href="https://github.com/perl11/cperl/commits/feature/gh22-ffi">feature/gh22-ffi branch</a></li>
 </ul>
-<h1 id="comments-on-rcperlhttpswwwredditcomrcperlcomments6dmzkgattribute-arguments">Comments on <a href="https://www.reddit.com/r/cperl/comments/6dmzkg/attribute_arguments/">/r/cperl</a></h1>
+<h1 id="comments-on-rcperlhttpswwwredditcomrcperlcomments6dmzkgattribute_arguments">Comments on <a href="https://www.reddit.com/r/cperl/comments/6dmzkg/attribute_arguments/">/r/cperl</a></h1>
 
         </div>
 
@@ -306,12 +306,12 @@ attribute syntax for perl6 <code>traits</code>.</p>
             <ul class="article-tag-list">
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://perl11.org/blog//tags/cperl">cperl
+                    <a class="article-tag-list-link" href="https://perl11.github.io/blog/tags/cperl">cperl
                     </a>
                 </li>
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://perl11.org/blog//tags/attributes">attributes
+                    <a class="article-tag-list-link" href="https://perl11.github.io/blog/tags/attributes">attributes
                     </a>
                 </li>
                 

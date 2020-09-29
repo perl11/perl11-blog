@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>oo on perl11 blog</title>
-    <link>http://perl11.org/blog/tags/oo.html</link>
+    <link>https://perl11.github.io/blog/tags/oo.html</link>
     <description>Recent content in oo on perl11 blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2016 Copyright Reini Urban</copyright>
     <lastBuildDate>Tue, 11 Sep 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://perl11.org/blog/tags/oo/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://perl11.github.io/blog/tags/oo/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>cperl classes</title>
-      <link>http://perl11.org/blog/cperl-classes.html</link>
+      <link>https://perl11.github.io/blog/cperl-classes.html</link>
       <pubDate>Tue, 11 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://perl11.org/blog/cperl-classes.html</guid>
+      <guid>https://perl11.github.io/blog/cperl-classes.html</guid>
       <description>Subtitle: Why a MOP is not always a good idea cperl being a perl11, i.e. 5+6=11, of course means that cperl classes are designed after perl5 and perl6 classes. perl5 does not have a builtin class keyword, but allows to add keywords to be added at runtime. cperl and perl6 of course do have a builtin class keyword.
 The backcompat problem with a new builtin keyword is, that some usages of variables, package or function names will not work anymore, because the new keyword stepped over it.</description>
     </item>

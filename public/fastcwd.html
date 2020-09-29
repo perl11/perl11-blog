@@ -9,16 +9,16 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="en_US" />
-<meta property="og:url" content="http://perl11.org/blog/fastcwd.html" />
+<meta property="og:url" content="https://perl11.github.io/blog/fastcwd.html" />
 
 
     <link href="" rel="alternate" type="application/rss+xml" title="perl11 blog" />
     <link rel="shortcut icon" href="/favicon.png">
 
-    <link href="http://perl11.org/blog/webfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
-    <link href="http://perl11.org/blog/webfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
+    <link href="https://perl11.github.io/blogwebfonts/ptserif/main.css" rel='stylesheet' type='text/css'>
+    <link href="https://perl11.github.io/blogwebfonts/source-code-pro/main.css" rel="stylesheet" type="text/css">
 
-    <link rel="stylesheet" href="http://perl11.org/blog/css/style.css">
+    <link rel="stylesheet" href="https://perl11.github.io/blogcss/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/tomorrow.min.css" crossorigin="anonymous" />
     <link href="http://gmpg.org/xfn/11" rel="profile">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -30,7 +30,7 @@
     <meta name="keywords" content="">
     <meta name="author" content="">
 
-    <meta name="generator" content="Hugo 0.62.0-DEV" />
+    <meta name="generator" content="Hugo 0.69.0" />
 </head>
 
 
@@ -40,10 +40,10 @@
     <div id="header-outer" class="outer">
         <div id="header-inner" class="inner">
             <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
-            <a id="logo" class="logo-text" href="http://perl11.org/blog/">perl11 blog</a>
+            <a id="logo" class="logo-text" href="https://perl11.github.io/blog">perl11 blog</a>
             <nav id="main-nav">
-                <a class="main-nav-link" href="http://perl11.org/">perl11.org</a>
-                <a class="main-nav-link" href="http://perl11.org/cperl/STATUS.html">cperl</a>
+                <a class="main-nav-link" href="https://perl11.github.io/">perl11.github.io</a>
+                <a class="main-nav-link" href="https://perl11.github.io/cperl/STATUS.html">cperl</a>
                 <a class="main-nav-link" href="https://www.rperl.org/">rperl</a>
                 <a class="main-nav-link" href="https://github.com/perl11/cperl/">cperl@github</a>
                 <a class="main-nav-link" href="https://docs.perl6.org/">perl6 docs</a>
@@ -85,10 +85,10 @@ fastgetcwd.</p>
 <p>The simplify the explanation of the various variants, which in theory
 should all return the same string, consider symlinks. If <code>realpath &quot;.&quot;</code> expands to something else than your <code>$PWD</code>, then the current
 directory is behind a symlink. This is a big problem for <code>rmtree</code>, as
-chdir'ing into a directory which is a symlink would lead to a
+chdir&rsquo;ing into a directory which is a symlink would lead to a
 situation, where you cannot step out to the previous directory again,
 and rmtree would continue deleting something else.  You might chdir
-out of a directory that you can't chdir back into.</p>
+out of a directory that you can&rsquo;t chdir back into.</p>
 <p>So to summarize the fastcwd variants, they could return a directory
 which contains a symlink, while getcwd should always resolve all
 symlinks.  In practice fastcwd should be usable for most cases and
@@ -112,7 +112,7 @@ path buffers until <code>ENAMETOOLONG</code> is not returned anymore.</p>
 <p>In cperl all the Cwd functions can handle overlong pathnames for some years
 already, perl5 cannot.</p>
 <h1 id="security">security</h1>
-<p>Attacks on bugs and limitations on pathname API's are quite common and
+<p>Attacks on bugs and limitations on pathname API&rsquo;s are quite common and
 easy to use. With the right symlink in user space or overlong pathnames
 you can trick the system into race attacks.
 See e.g. <a href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=487319">http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=487319</a> or
@@ -134,7 +134,7 @@ are returned with a &ldquo;./&rdquo; prefix when using fastcwd and not getcwd.</
 <p>But there are so many security problems in perl5, that you really should not
 use perl5 in production with public access. Only cperl, which does have those
 kind of bugs fixed. And many more.</p>
-<h1 id="comments-on-rcperlhttpswwwredditcomrcperlcomments9n86ilthere-be-getcwd-dragons">Comments on <a href="https://www.reddit.com/r/cperl/comments/9n86il/there_be_getcwd_dragons/">/r/cperl</a>.</h1>
+<h1 id="comments-on-rcperlhttpswwwredditcomrcperlcomments9n86ilthere_be_getcwd_dragons">Comments on <a href="https://www.reddit.com/r/cperl/comments/9n86il/there_be_getcwd_dragons/">/r/cperl</a>.</h1>
 
         </div>
 
@@ -193,12 +193,12 @@ kind of bugs fixed. And many more.</p>
             <ul class="article-tag-list">
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://perl11.org/blog//tags/cperl">cperl
+                    <a class="article-tag-list-link" href="https://perl11.github.io/blog/tags/cperl">cperl
                     </a>
                 </li>
                 
                 <li class="article-tag-list-item">
-                    <a class="article-tag-list-link" href="http://perl11.org/blog//tags/security">security
+                    <a class="article-tag-list-link" href="https://perl11.github.io/blog/tags/security">security
                     </a>
                 </li>
                 
