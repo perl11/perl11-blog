@@ -30,7 +30,7 @@
     <meta name="keywords" content="">
     <meta name="author" content="">
 
-    <meta name="generator" content="Hugo 0.20-DEV" />
+    <meta name="generator" content="Hugo 0.62.0-DEV" />
 </head>
 
 <body>
@@ -77,11 +77,11 @@
                 <div class="article-entry" itemprop="articleBody">
                     <p>
                         
-                    I&rsquo;ve tried several traditional linker optimizations on cperl recently. The easiest is
+                    I've tried several traditional linker optimizations on cperl recently. The easiest is
 LTO or &ldquo;Link Time Optimization&rdquo; via gcc -flto=4 or clang -flto=thin. This requires the gold linker, and enables multi-threaded link-time optimizations.
 For gcc my configure script does
 CC=${CC:-ccache gcc} ./Configure -sder -Dcc=&quot;$CC&quot; \ -Dld=&quot;$CC -fuse-linker-plugin&quot; \ -Accflags=&quot;-flto=4 -fuse-ld=gold -msse4.2 -march=native&quot; ...  and for clang
-CC=${CC:-ccache clang-7} ./Configure -sder -Dcc=&quot;$CC&quot; \ -Dranlib=llvm-ranlib-7 -Dar=llvm-ar-7 -Dfull_ar=/usr/bin/llvm-ar-7 \ -Accflags=&quot;-DLTO -flto=thin -msse4.
+CC=${CC:-ccache clang-7} ./Configure -sder -Dcc=&quot;$CC&quot; \ -Dranlib=llvm-ranlib-7 -Dar=llvm-ar-7 -Dfull_ar=/usr/bin/llvm-ar-7 \ -Accflags=&quot;-DLTO -flto=thin -msse4.2 -march=native&quot; .
                     </p>
                     <p class="article-more-link">
                         <a href="/blog/bolt.html">Read More</a>
@@ -122,7 +122,7 @@ CC=${CC:-ccache clang-7} ./Configure -sder -Dcc=&quot;$CC&quot; \ -Dranlib=llvm-
                 <div class="article-entry" itemprop="articleBody">
                     <p>
                         
-                    The removal of the old and deprecated perl4 single quote character ' as valid package seperator in cperl went through various steps. It&rsquo;s also explained in perldata.
+                    The removal of the old and deprecated perl4 single quote character ' as valid package seperator in cperl went through various steps. It's also explained in perldata.
 There are still two package separators in perl5:
 A double colon (::) and a single quote ('). Normal identifiers can start or end with a double colon, and can contain several parts delimited by double colons. Single quotes within perl5 have similar rules, but with the exception that they are not legal at the end of an identifier: That is, $'foo and $foo'bar are legal, but $foo'bar' is not.
                     </p>
@@ -302,7 +302,7 @@ With the recent safeclib-3.3 release I made the almost same improvements as in c
                     <p>
                         
                     You probably heard about case-folding or foldcase before. Unicode defines CaseFolding mappings for some upper-case characters, which in full casefolding mode will expand some exotic characters to larger sequences. In simple mode it will do 1:1 tolower() mappings.
-The perl documentation has this to say:
+ The perl documentation has this to say:
 fc Returns the casefolded version of EXPR. This is the internal function implementing the &ldquo;\F&rdquo; escape in double-quoted strings.
 Casefolding is the process of mapping strings to a form where case differences are erased; comparing two strings in their casefolded form is effectively a way of asking if two strings are equal, regardless of case.
                     </p>
@@ -399,7 +399,7 @@ my $i :Int = 1; sub calc :prototype($$) { shift + shift }  There were a few numb
                     <p>
                         
                     Consistent identifier parsing rules perl5 and cperl older than 5.27.0 accepts any string as valid identifier name when being created under no strict 'refs' at run-time, even when most such names are illegal, and cannot be handled by most external modules. Even invalid unicode is allowed.
-cperl 5.26 fixed embedded NUL&rsquo;s and invalid unicode identifiers illegal, and normalizes unicode identifiers in the parser.
+cperl 5.26 fixed embedded NUL's and invalid unicode identifiers illegal, and normalizes unicode identifiers in the parser.
 Since cperl 5.27.1 dynamically created names are treated the same way as when they are parsed.
                     </p>
                     <p class="article-more-link">
@@ -497,6 +497,7 @@ my %h = (0..2); =&gt; Odd number of elements found where hash initializer expect
                     Binary packages perl5 relies on external packagers to update and maintain packages for various distributions. It only provides source packages as tarballs.
 cperl does a bit better by also providing binary packages for all major platforms. See also Installation at the STATUS page. win32, win64, debian 7 i686, debian 8 amd64, centos 7 x86_64, centos 6 i686+x86_64 and darwin amd64.
 Packaging was done with this do-make-cperl-release script, leading to
+Centos/Fedora/RHEL as el6 or el7 /etc/yum.
                     </p>
                     <p class="article-more-link">
                         <a href="/blog/automatic-deployments.html">Read More</a>
@@ -547,13 +548,6 @@ Packaging was done with this do-make-cperl-release script, leading to
         </div>
     </div>
     
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-92976825-1', 'auto');
-ga('send', 'pageview');
-</script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
     <script>hljs.initHighlightingOnLoad();</script>

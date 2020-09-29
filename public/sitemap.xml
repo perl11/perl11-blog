@@ -1,8 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://perl11.org/blog/tags/cperl.html</loc>
+    <lastmod>2018-10-22T00:00:00+00:00</lastmod>
+  </url>
   
   <url>
     <loc>http://perl11.org/blog/bolt.html</loc>
+    <lastmod>2018-10-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://perl11.org/blog/</loc>
+    <lastmod>2018-10-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://perl11.org/blog/tags.html</loc>
     <lastmod>2018-10-22T00:00:00+00:00</lastmod>
   </url>
   
@@ -12,12 +28,22 @@
   </url>
   
   <url>
+    <loc>http://perl11.org/blog/tags/security.html</loc>
+    <lastmod>2018-10-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://perl11.org/blog/fastcwd.html</loc>
     <lastmod>2018-10-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://perl11.org/blog/cperl-classes.html</loc>
+    <lastmod>2018-09-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://perl11.org/blog/tags/oo.html</loc>
     <lastmod>2018-09-11T00:00:00+00:00</lastmod>
   </url>
   
@@ -32,13 +58,28 @@
   </url>
   
   <url>
+    <loc>http://perl11.org/blog/tags/unicode.html</loc>
+    <lastmod>2017-09-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://perl11.org/blog/attributes-args.html</loc>
+    <lastmod>2017-05-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://perl11.org/blog/tags/attributes.html</loc>
     <lastmod>2017-05-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://perl11.org/blog/strict-names.html</loc>
     <lastmod>2017-05-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://perl11.org/blog/tags/hash.html</loc>
+    <lastmod>2017-05-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -62,8 +103,18 @@
   </url>
   
   <url>
+    <loc>http://perl11.org/blog/tags/perl5.html</loc>
+    <lastmod>2017-01-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://perl11.org/blog/worst-perl5-bugs.html</loc>
     <lastmod>2017-01-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://perl11.org/blog/tags/p5p.html</loc>
+    <lastmod>2017-01-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -82,68 +133,7 @@
   </url>
   
   <url>
-    <loc>http://perl11.org/blog/tags/attributes.html</loc>
-    <lastmod>2017-05-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://perl11.org/blog/categories.html</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://perl11.org/blog/tags/cperl.html</loc>
-    <lastmod>2018-10-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://perl11.org/blog/tags/hash.html</loc>
-    <lastmod>2017-05-16T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://perl11.org/blog/tags/oo.html</loc>
-    <lastmod>2018-09-11T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://perl11.org/blog/tags/p5p.html</loc>
-    <lastmod>2017-01-24T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://perl11.org/blog/tags/perl5.html</loc>
-    <lastmod>2017-01-30T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://perl11.org/blog/tags/security.html</loc>
-    <lastmod>2018-10-11T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://perl11.org/blog/tags.html</loc>
-    <lastmod>2017-05-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://perl11.org/blog/tags/unicode.html</loc>
-    <lastmod>2017-09-16T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://perl11.org/blog/</loc>
-    <lastmod>2018-10-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
 </urlset>
